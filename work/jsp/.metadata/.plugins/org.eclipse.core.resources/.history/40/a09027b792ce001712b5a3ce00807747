@@ -1,0 +1,6 @@
+package com.omp.repository.domain;
+
+public interface Controller 
+{
+	void execute() throws Exception;
+}

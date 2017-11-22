@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;04_domandform&apos;&#x0D;&#x0A;- Original project: &apos;css3&apos;&#x0D;&#x0A;- Destination element: &apos;04_domandform&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     pic2.jpg&#x0D;&#x0A;     pic1.jpg" description="Copy files" element1="WebContent/images/pic2.jpg" element2="WebContent/images/pic1.jpg" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1510281353767" target="/06_javascript/WebContent/04_domandform" units="0" version="1.0"/>
+</session>

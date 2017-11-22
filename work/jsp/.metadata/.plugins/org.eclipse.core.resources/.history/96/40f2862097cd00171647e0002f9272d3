@@ -1,0 +1,9 @@
+package di.test03;
+
+public class TVFactory 
+{
+	public TV getBean(String name)
+	{
+		
+	}
+}

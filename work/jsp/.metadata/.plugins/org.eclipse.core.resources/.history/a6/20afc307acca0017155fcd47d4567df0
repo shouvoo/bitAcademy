@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script
+	src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+</script>
+
+</head>
+<body>
+	<div>
+	
+		<form id="frm">	
+			<table border=1>
+				<tr>
+					<th colspan="6">사원 정보 검색</th>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td><input id="nameFiled" name="name" type="text" ></td>
+					<td>성별</td>
+					<td id="genderField">
+						<input type="checkbox" name="gender" value="1" />남
+						<input type="checkbox" name="gender" value="2" />여
+					</td>
+					<td>종교</td>
+					<td>
+						<select id="religionSelectBox" size="1" name="religion" >
+							<option value="-1" selected> 전체 </option>
+					    </select>
+					</td>
+				</tr>
+				<tr>
+					<td>학력</td>
+					<td id="schoolSelectBox">
+	
+					</td>
+					<td>기술</td>
+					<td id="skillSelectBox" colspan="3">
+	
+					</td>
+				</tr>
+				<tr>
+					<td>졸업일</td>
+					<td id="calendar" colspan="5">
+					</td>
+				</tr>
+			</table>
+			
+			<button id="searchButton">검색</button>	
+			<button id="allButton" type="button">전부검색</button>
+			<button type="button" onclick="buttonClick('${pageContext.request.contextPath}/search/searchform.do')">초기화</button>
+			<button type="button">등록</button>
+		</form>	
+	</div>
+	
+	<div>
+		<table id="listBoard" border=1>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>성별</th>
+				<th>종교</th>
+				<th>졸업일</th>
+			</tr>
+		</table>
+	</div>
+
+<script type="text/javascript">
+	
+	var religionList;
+	var schoolList;
+	var skillList;
+	var leftCalender;
+	let calendarContainer = $("#calendar");
+	
+	var to_day = new Date();
+	var to_year = to_day.getFullYear();
+	var lastDay = ( new Date( 2017, 12, 0) ).getDate();
+	
+	$(document).ready(function(){
+		$.ajax({
+			url : "searchform.json",
+			success : function(data){ 
+				$("#result").html(data); 
+				
+				religionList = data.religion;
+				schoolList = data.school;
+				skillList = data.skill;
+				
+				
+				makeReligion();
+				makeSchoolSelectBox();
+				makeSkillBox();
+				
+				leftCalender = $("<span name='left'>");
+				rightCalender = $("<span name='right'>");
+				calendarContainer.append(leftCalender);
+				calendarContainer.append(rightCalender);
+				makeSetCalender("left");		
+				makeSetCalender("right");	
+				
+				buttons();
+			}
+		});
+	})
+	
+	
+	function makeReligion()
+	{
+		var religionBox = $("#religionSelectBox")
+		for(var i = 0; i < religionList.length; i++)
+		{
+			let optionsObj = $("<option>");
+			optionsObj.attr("value", religionList[i].religionCode);
+			optionsObj.text(religionList[i].religionName);
+			religionBox.append(optionsObj);
+		}
+	}
+
+	function makeSchoolSelectBox()
+	{
+		let tag = "";
+		var schoolBox = $("#schoolSelectBox")
+		for(var i = 0; i < schoolList.length; i++)
+		{
+			tag += "<input type='checkbox' name='school' value="+schoolList[i].schoolCode+" />" + schoolList[i].schoolName;
+			schoolBox.html(tag);
+		}
+	}
+
+	function makeSkillBox()
+	{
+		
+		let tag = "";
+		var skillBox = $("#skillSelectBox")
+		for(var i = 0; i < skillList.length; i++)
+		{
+			tag += "<input type='checkbox' name='skill' value="+skillList[i].skillCode+" />" + skillList[i].SkillName;
+			skillBox.html(tag);
+		}
+	}
+	
+	function makeSetCalender(name)
+	{
+		mekeYearCalender(name);
+		mekeMonthCalender(name);
+		mekeDayCalender(name);
+	};
+	
+	function mekeYearCalender(name)
+	{
+		let optionTag = "";
+		let calendarTag = "<select size='1' name='sYear'/>년";
+		$("#calendar > span[name="+ name +"]").append(calendarTag);
+
+		for(let i = to_year; i > 1899; i--)
+		{ 
+			optionTag += "<option value=" + i +">"+ i +"</option>";
+		}
+		
+		$("#calendar > span[name="+ name +"] > select:nth-child(1)").html(optionTag);
+		$("#calendar > span[name="+ name +"] > select:first-child").change(function(e){
+			if(this == e.target)
+			{
+				lastDay = ( new Date(  $(this).val(), $("#calendar > span[name="+ name +"] >  select:nth-child(2)").val(),0) ).getDate();
+				$("#calendar > span[name="+ name +"] >  select:nth-child(3)").remove();
+				$(name).remove();
+				mekeDayCalender(name); 
+				e.stopPropagation()
+			}
+			
+		})
+	}
+	
+	function mekeMonthCalender(name)
+	{
+		let optionTag = "";		
+		let calendarTag = "<select size='1' name='sYear'/>월";
+		$("#calendar > span[name="+ name +"]").append(calendarTag);
+
+		for(let i = 1; i <= 12; i++)
+		{ 
+			optionTag += "<option value=" + i +">"+ i +"</option>";
+		}
+
+		$("#calendar > span[name="+ name +"] >  select:nth-child(2)").html(optionTag);
+		$("#calendar > span[name="+ name +"] >  select:nth-child(2)").change(function(e){
+			
+			if(this == e.target)
+			{
+				lastDay = ( new Date( $("#calendar > span[name="+ name +"] >  select:first-child").val(), $(this).val(), 0) ).getDate();
+				$("#calendar > span[name="+ name +"] >  select:nth-child(3)").remove();
+				$("#calendar > span[name="+ name +"] > span[name="+ name +"]").remove();
+				mekeDayCalender(name); 
+				e.stopPropagation()
+			}
+			
+		})
+	}
+	
+	function mekeDayCalender(name)
+	{
+		let optionTag = "";		
+		let calendarTag = "<select size='1' name='sYear'/><span name="+name+">일</span>";
+		$("#calendar > span[name="+ name +"]").append(calendarTag);
+
+		for(let i = 1; i <= lastDay; i++)
+		{ 
+			optionTag += "<option value=" + i +">"+ i +"</option>";
+		}
+
+		$("#calendar > span[name="+ name +"] >  select:nth-child(3)").html(optionTag);
+		$("#calendar > span[name="+ name +"] >  select:nth-child(3)").change(function(e){
+			if(this == e.target)
+			{
+				e.stopPropagation()
+			}
+			
+		})
+	}
+	
+	function buttonClick(src)
+	{
+		location.href = src;
+	}
+	
+	function checkform(frm)
+	{
+		var sYear = document.frm.sYear;
+		var eYear = document.frm.eYear;
+		
+		var s = 0;
+		var e = 0;
+		
+		for(var i=0; i<sYear.length; i++)
+		{
+			s += sYear[i].value;
+			e += eYear[i].value;
+			//return false;
+		}
+		
+		if(s <= e) return true;
+		else 
+		{
+			alert("시작년도가 큽니다 다시 선택해 주세요!!")
+			return false;
+		}
+	}
+	
+	
+/* 	<c:forEach var="temples" items="${templesList}">
+	<tr>
+		<td>${temples.staffNo}</td>
+		<td>${temples.staffName}</td>
+		<td>${temples.gender}</td>
+		<td>${temples.religionName}</td>
+		<td>${temples.graduateDay}</td>
+		<td>
+			<button type="button"  onclick="buttonClick('${pageContext.request.contextPath}/search/modifyanddelete.do')">수정/삭제</button>
+		</td>
+	<tr>
+</c:forEach> */
+	function buttons()
+	{
+		var formButton = $("#searchButton");
+		var allButton = $("#allButton");
+		
+		
+		formButton.click(function(e){
+			e.preventDefault();
+			console.log($("#nameFiled").val());
+			console.log($("#genderField").val());
+			
+			/* $.ajax({
+				url : "total.json",
+				success : function(data){ 
+					console.log(data)
+					setListBoard(data);
+				}
+			}); */
+		})
+		
+		
+		allButton.click(function(e){
+			$.ajax({
+				url : "total.json",
+				success : function(data){ 
+					setListBoard(data);
+				}
+			});
+		})
+	}
+	
+	function setListBoard(data)
+	{
+		
+		for(var i = 0; i < data.length; i++)
+		{
+			var tag = "";
+			//tdTag += "<td>" + data[i].staffNo + "</td>";
+			//Object.keys(data[i]).length
+			tag += "<tr>"
+			tag += "<td>" + data[i].staffNo + "</td>"
+			tag += "<td>" + data[i].staffName + "</td>"
+			tag += "<td>" + data[i].gender + "</td>"
+			tag += "<td>" + data[i].religionName + "</td>"
+			tag += "<td>" + data[i].graduateDay + "</td>"
+			tag += "</tr>"
+			$("#listBoard").append(tag);
+		}
+		
+		
+	}
+	
+</script>
+
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

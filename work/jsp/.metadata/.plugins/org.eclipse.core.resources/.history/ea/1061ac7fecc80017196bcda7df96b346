@@ -1,0 +1,21 @@
+<!-- 
+	태그 생성 기능 추가하기
+	
+	document.createElement("h1");
+	
+	$("<h1>");
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<button>태그추가하기</button>
+	
+</body>
+</html>

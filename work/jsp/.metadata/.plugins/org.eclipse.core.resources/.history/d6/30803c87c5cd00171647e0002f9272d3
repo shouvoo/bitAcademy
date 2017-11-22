@@ -1,0 +1,15 @@
+package kr.co.mlec.login;
+
+import org.apache.ibatis.session.SqlSession;
+
+import kr.co.mlec.common.MyAppSqlConfig;
+
+public interface LoginMapper {
+	
+	public LoginMapper ()  throws Exception;
+	
+	public Login detailMember(Login login) throws Exception {
+		return session.selectOne(NS + "detailMember", login);		
+	}
+	
+}

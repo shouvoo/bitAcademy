@@ -1,0 +1,16 @@
+폴더 우클릭 소스폴더 클릭
+
+resources 로 폴더 네임설정 finish
+
+config 폴더에 있는 파일을 resources 로 복사
+
+
+1 xml 파일등 java 이외의 설정관련 파일저장 
+	- 프로젝트에서 마우스 오른쪽 버튼을 클릭해서 source folder 생성
+	  (resources 이름으로 생성)
+	- 생성된 폴더에 config 폴더를 붙여넣기
+	
+	http://mvnrepository.com/
+	
+라이브러리 build path 추가하기
+- lib 폴더 생성 후 mybatis 와 ojdbx 파일 붙여넣기

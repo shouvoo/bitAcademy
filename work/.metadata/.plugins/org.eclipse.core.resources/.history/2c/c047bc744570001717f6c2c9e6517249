@@ -1,0 +1,14 @@
+package basic;
+
+public class CastingMain 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		int i = 250;
+		byte bb = (byte)i;
+		System.out.println(bb);
+	}
+
+}

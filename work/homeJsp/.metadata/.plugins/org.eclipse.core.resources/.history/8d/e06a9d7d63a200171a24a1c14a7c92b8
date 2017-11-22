@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+		
+	<body>
+		<!-- table>tr[height=10]*3>td[width=50]*4> 테이블을 생성해줌 -->
+		<table border=1>
+			<tr height="50">
+				<td width="50" bgcolor="red"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50" bgcolor="blue"></td>
+			</tr>
+			<tr height="50">
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+			</tr>
+			<tr height="50">
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+			</tr>
+			<tr height="50">
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+			</tr>
+			<tr height="50">
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+			</tr>
+		</table>
+	
+	</body>
+</html>

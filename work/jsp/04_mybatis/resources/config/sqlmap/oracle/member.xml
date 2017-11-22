@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.member.mapper.MemberMapper">
+    <!-- 
+    	mapper 파일에서는 select, insert, delete, update 쿼리를 적용
+    	; 쿼리에 붙이면 에러발생
+     -->
+     <select id="getMemberInfo1" parameterType="string" resultType="member">
+	     select * 
+	     	from mybatis_member
+	     	where id = #{id}
+     </select>
+     
+     <select id="getMemberInfo2" parameterType="member" resultType="member">
+     	select *
+     		from mybatis_member
+     		where id = #{id}
+     		and name = #{name}
+     </select>
+     
+     <select id="getMemberInfo3" parameterType="string" resultType="member">
+     	select name
+     		from mybatis_member
+     		where id = #{id}
+     </select>
+     
+     <select id="getMemberInfo4" parameterType="int">
+     	select count(*)
+     		from mybatis_member
+     </select>
+     
+     <select id="getMemberList1" resultType="member">
+     	select *
+     		from mybatis_member
+     		order by id
+     </select>
+     
+     <select id="getMemberList2" resultType="member">
+     	select name
+     		from mybatis_member
+     		order by id
+     </select>
+     
+     <!-- 테이블 데이터의 결과를 vo 에 설정해서 반환
+     		테이블 컬럽				VO
+     		id          ->      id
+     		name        ->      name
+     		addr        ->      addr
+     		......
+     		join_date   ->      joinDate
+      -->
+     <resultMap id="memberMap"  type="member" >
+     	<result column="id" property="id"/>
+     	<result column="name" property="name"/>
+     	<result column="email" property="email"/>
+     	<result column="addr" property="addr"/>
+     	<result column="join_date" property="joinDate"/>
+     </resultMap>
+     
+     <select id="getMemberList3" resultMap="memberMap">
+     	select *
+     		from mybatis_member
+     		order by id
+     </select>
+     
+     <insert id="insertMember" parameterType="member">
+     	insert into mybatis_member(
+     		id, name, email, addr
+     	) values (
+     		#{id}, #{name}, #{email}, #{addr}
+     	)     	
+     </insert>
+     
+     <update id="updateMember" parameterType="member">
+     	update mybatis_member 
+     		set email = #{email},
+     			 addr = #{addr}
+     			where id = #{id}
+     </update>
+     
+     <delete id="deleteMember" parameterType="string">
+     	delete 
+     		from mybatis_member 
+     		where id = #{id}
+     </delete>
+     
+     <select id="getMemberIteratorList" parameterType="member" resultMap="memberMap">
+     	select *
+     		from mybatis_member 
+     		where addr in <foreach item="addr" collection="addrs"
+     						open="("  separator="," close=")">
+     							#{addr}
+     					</foreach>
+     	<!-- 				
+     		where add in ('busan', 'seoul')
+     	 -->
+     </select>
+     
+     <sql id="whereCommon">
+     	where id like 'mem%'
+     </sql>
+     
+     
+     
+     <select id="getMemberIncludeList" resultMap="memberMap">
+     	select * 
+     		from mybatis_member 
+     		<include refid="whereCommon" />
+     </select>
+     
+     <select id="getMemberIncludeListCount" resultType="int">
+     	select count(*)
+     		from mybatis_member 
+     		<include refid="whereCommon" />
+     </select>
+     
+     <select id="getMemberSearchList" parameterType="search" resultMap="memberMap">
+     	select * 
+     		from mybatis_member
+     		<choose>
+				<when test="searchType == 'id'">
+					where id like '%' || #{searchWord} || '%'
+				</when>
+				<otherwise>
+					where name like '%' || #{searchWord} || '%'
+				</otherwise>
+     		</choose>
+     </select>
+     
+     <select id="getMemberSearchList2" parameterType="member" resultMap="memberMap">
+     	select * 
+     		from mybatis_member
+     		<where>
+	     		<!-- 아이디만 있는경우 -->
+	     		<if test="id != null">
+	     			id like '%' || #{id} || '%'	
+	     		</if>
+	     		
+	     		<!-- name만 있는경우 -->
+	     		<if test="name != null">
+	     			and name like '%' || #{name} || '%'	
+	     		</if>
+     		</where>
+
+     </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

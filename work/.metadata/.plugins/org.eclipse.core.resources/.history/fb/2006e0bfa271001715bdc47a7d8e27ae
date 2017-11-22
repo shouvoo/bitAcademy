@@ -1,0 +1,89 @@
+package basic;
+
+public class SwitchMain2 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		int avg = 88;
+		
+		
+		switch(avg / 10)
+		{
+			case :
+				break;
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

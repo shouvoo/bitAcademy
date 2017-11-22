@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MyClass.java&apos; to &apos;anno.MyClass.java&apos;&#x0D;&#x0A;- Original project: &apos;lec01_servletjsp&apos;&#x0D;&#x0A;- Destination element: &apos;anno.MyClass.java&apos;&#x0D;&#x0A;- Original element: &apos;anno.MyClass.java&apos;" description="Copy compilation unit" destination="/src&lt;anno{MyClass.java" element1="/src&lt;anno{MyClass.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1508983150137" units="1" version="1.0"/>
+</session>

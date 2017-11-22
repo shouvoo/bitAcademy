@@ -1,0 +1,23 @@
+<!-- 
+	외부에 있는 스크립트 파일을 참조해서 실행하기
+	1. 확장자가 js인 파일을 생성
+	2. html 파일에서 
+		<script src="js 파일의 위치"></script>
+		주의 : 
+		<script src="..">여기 스크립트 실행안됨</script>
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script src="test02.js">console.log("실행안됨")</script>
+	<script>
+		console.log("파일 호출과 별도의 태그를 만들어서 추가해야함");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

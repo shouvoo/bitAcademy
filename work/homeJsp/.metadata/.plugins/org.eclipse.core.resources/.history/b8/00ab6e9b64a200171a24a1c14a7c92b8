@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style type="text/css">
+			.sat
+			{
+				background: red;
+				color: yellow;
+			}
+			
+			.sun
+			{
+				background: blue;
+				color: white;
+			}
+		</style>
+		
+	</head>
+		
+	<body>
+		<!-- table>tr[height=10]*3>td[width=50]*4> 테이블을 생성해줌 -->
+		<table border=1>
+			<tr height="50">
+				<td class="sat" width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50"></td>
+				<td width="50">1</td>
+				<td class="sun"  width="50">2</td>
+			</tr>
+			<tr height="50">
+				<td class="sat"  width="50">3</td>
+				<td width="50">4</td>
+				<td width="50">5</td>
+				<td width="50">6</td>
+				<td width="50">7</td>
+				<td width="50">8</td>
+				<td class="sun" width="50">9</td>
+			</tr>
+			<tr height="50">
+				<td class="sat"  width="50">10</td>
+				<td width="50">11</td>
+				<td width="50">12</td>
+				<td width="50">13</td>
+				<td width="50">14</td>
+				<td width="50">15</td>
+				<td class="sun" width="50">16</td>
+			</tr>
+			<tr height="50">
+				<td class="sat"  width="50">17</td>
+				<td width="50">18</td>
+				<td width="50">19</td>
+				<td width="50">20</td>
+				<td width="50">21</td>
+				<td width="50">22</td>
+				<td class="sun" width="50">23</td>
+			</tr>
+			<tr height="50">
+				<td class="sat"  width="50">24</td>
+				<td width="50">25</td>
+				<td width="50">26</td>
+				<td width="50">27</td>
+				<td width="50">28</td>
+				<td width="50">29</td>
+				<td class="sun" width="50">30</td>
+			</tr>
+		</table>
+	
+	</body>
+</html>

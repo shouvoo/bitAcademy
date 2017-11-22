@@ -1,0 +1,14 @@
+package di.quiz;
+
+public class Animal 
+{
+	public Animal()
+	{
+		
+	}
+	
+	public void info()
+	{
+		System.out.println("성공");
+	}
+}

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="search.SearchMapper">
+
+	<resultMap id="religionMap" type="religion">
+		<result column="religion_code" property="religionCode" />
+		<result column="religion_name" property="religionName" />
+	</resultMap>
+	
+	<resultMap id="schoolMap" type="school">
+		<result column="school_code" property="schoolCode" />
+		<result column="school_name" property="schoolName" />
+	</resultMap>
+	
+	<resultMap id="skillMap" type="skill">
+		<result column="skill_code" property="skillCode" />
+		<result column="skill_name" property="skillName" />
+	</resultMap>
+
+
+	<select id="religionRead" resultMap="religionMap">
+		select * from code_religion
+	</select>
+	
+	<select id="schoolRead" resultMap="schoolMap">
+		select * from code_school
+	</select>
+	
+	
+	<select id="skillRead" resultMap="skillMap">
+		select * from code_skill
+	</select>
+	
+	
+	<resultMap id="templesMap" type="temples">
+		<result column="staff_no" property="staffNo" />
+		<result column="staff_name" property="staffName" />
+		<result column="jumin_no" property="juminNo" />
+		<result column="school_code" property="schoolCode" />
+		<result column="religion_code" property="religionCode" />
+		<result column="graduate_day" property="graduateDay" />
+		<result column="religion_name" property="religionName" />
+		<result column="gender" property="gender" />
+	</resultMap>
+	
+	<select id="getTemplesList" resultMap="templesMap">
+		select staff.*,
+		decode(substr(jumin_no,8,1),'1','남자','2', '여자') "gender",
+		code_religion.RELIGION_NAME
+		from staff 
+		inner join code_religion
+		on staff.RELIGION_CODE = code_religion.religion_code
+	</select>
+	
+	<select id="getResultList" parameterType="temples" resultMap="templesMap">
+		select staff.*,
+			decode(substr(jumin_no,8,1),'1','남자','2', '여자') "gender",
+			code_religion.RELIGION_NAME,
+			staff.RELIGION_code,
+			staff_skill.skill_code,
+			staff.graduate_day
+		from staff 
+			inner join code_religion
+			on staff.RELIGION_CODE = code_religion.religion_code
+			inner join staff_skill
+			on staff.STAFF_NO = staff_skill.STAFF_NO
+			
+		<where> 	
+			<if test="staffName != null">
+				and staff.staff_name like '%' || #{staffName} || '%'
+			</if>
+			
+			<if test="genders != null">
+				<foreach collection="genders" item="gender">
+					and substr(jumin_no,8,1) = #{gender}
+				</foreach>
+			</if>  
+			
+			<if test="religionCode != null and religionCode != -1">
+				and staff.RELIGION_CODE = #{religionCode}
+			</if> 
+			
+			<if test="schoolCodes != null">
+				<foreach collection="schoolCodes" item="school">
+					and SCHOOL_CODE = #{school}
+				</foreach>
+			</if>
+			
+			<if test="skillCodes != null">
+				<foreach collection="skillCodes" item="skill">
+					and skill_CODE = #{skill}
+				</foreach>
+			</if>
+			
+			<if test="sGraduationDate != null and eGraduationDate != null">
+				and staff.graduate_day > #{sGraduationDate}
+			</if>
+			
+			<if test="sGraduationDate != null and eGraduationDate != null">
+				and #{eGraduationDate} > staff.graduate_day
+			</if> 
+			
+			
+			 
+			
+
+		</where> 				
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

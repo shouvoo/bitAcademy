@@ -1,0 +1,74 @@
+<!--  
+
+	이벤트 이해하기 - 1(이벤트 설정 방식)
+	
+	----------------------------------------------
+	[[ 태그 직접 설정하기 ]]
+	<태그 on이벤트타입="처리코드">  </태그>
+
+	샤용 예)
+	<button onclick="test()">클릭</button>
+	
+	[[ 태극 객체 프로퍼티 활용 ]]
+	- 객체.on이벤트 타입 = 콜백함수;
+	- 하나의 이벤트 함수만 등록 가능함
+	
+	사용 예)
+	<button>클릭</button>
+	
+	
+	//등록된 이벤트 취소하기
+	객체.on이벤트타입 - null;
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="btn">클릭</button>
+	
+	
+	<script type="text/javascript">
+	
+		var btn = document.querySelector("#btn");
+		
+		/* btn.onclick = function(e)
+		{
+			console.log(e)
+		} */
+		
+		btn.onclick = test;
+		
+		function test(e)
+		{
+			//이벤트 콜백함수에서의 this 는 이벤트가 발생한 대상 객체임
+			console.log(this)
+			
+			//클릭 이벤트 해제하기
+			this.onclick = null;
+		} 
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

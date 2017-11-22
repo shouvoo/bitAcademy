@@ -1,0 +1,46 @@
+<!-- 
+	삭제하기
+	
+	parent.removeChild(child);
+	child.remove();
+	
+	
+	----------------------------------------------------------------------
+	child.remove();
+	
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <script type="text/javascript" src="jquery.js"></script> -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+</head>
+<body>
+	<button>삭제</button>
+	
+	<div id="list">테스트</div>
+	<div id="list">테스트</div>
+	<div id="list">테스트</div>
+	<div id="list">테스트</div>
+	<div id="list">테스트</div>
+
+
+	<script type="text/javascript">
+	
+		var $btn = $("button")[0];
+		
+		$btn.addEventListener("click", function(e) {
+			$("#list").remove();
+		});
+	
+	</script>
+</body>
+</html>

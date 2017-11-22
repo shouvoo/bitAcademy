@@ -1,0 +1,9 @@
+package di.quiz;
+
+public class Person 
+{
+	public void getAnimal()
+	{
+		return Animal;
+	}
+}

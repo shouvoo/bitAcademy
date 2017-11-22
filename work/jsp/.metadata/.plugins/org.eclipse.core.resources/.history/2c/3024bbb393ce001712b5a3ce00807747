@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.omp.repository.mapper.SupportLinkMapper">
+	<resultMap id="supportMap" type="support">
+		<result column="support_no" property="supportNo" />
+		<result column="title" property="title" />
+		<result column="site" property="site" />
+	</resultMap>
+
+	<insert id="insertSupportLink" parameterType="SupportLinkDomain">
+ 		insert into support_link(
+			support_no, 
+			title, 
+			site 
+		) values ( 
+			support_link_seq.nextval, 
+		    #{supportNo}, #{site}
+		)
+	</insert>
+	
+	<update id="modifySupportLink" parameterType="board">
+	   update support_link 
+	      set title = #{title}, 
+	          site = #{site}, 
+	    where support_no = #{supportNo}
+	</update>
+	
+	<delete id="deleteSupportLink" parameterType="int">
+		delete
+		  from support_link
+	  	 where support_no = #{supportNo}
+	</delete>
+	
+	<select id="detailSupportLink" parameterType="int" resultMap="supportMap">
+		select * 
+		  from support_link
+	  	 where support_no = #{supportNo}
+	</select>
+	
+	<select id="readSupportLink" resultMap="supportMap" parameterType="page">
+		select * 
+		  from support_link
+	  	  order by support_no desc
+	  	  
+	  	  
+	  	select * 
+	  		from(select rownum rnum, a.*
+	  			from (select *
+	  				from support_link
+	  			order by no desc)a)
+	  		where rnum between ? and ?
+	  	  
+	</select>
+</mapper>
+
+sql.append("select * ") 
+				.append(" from(select rownum rnum, a.*  ")
+				.append(" 	from (select *  ")
+				.append(" 		from paging_board  ")
+				.append(" 	order by no desc)a)  ")
+				.append(" where rnum between ? and ? ");
+
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setInt(1, page.getBegin());
+			pstmt.setInt(2, page.getEnd());
+			
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BoardDomain board = new BoardDomain();
+				board.setNo(rs.getInt("no"));
+				board.setTitle(rs.getString("title"));
+				board.setWriter(rs.getString("writer"));
+				board.setContent(rs.getString("content"));
+				board.setRegDate(rs.getDate("reg_date"));
+				list.add(board);
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

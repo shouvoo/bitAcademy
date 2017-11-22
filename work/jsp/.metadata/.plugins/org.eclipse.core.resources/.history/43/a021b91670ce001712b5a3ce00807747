@@ -1,0 +1,14 @@
+package kr.co.mlec.board;
+
+import org.springframework.web.mvc.ModelAndView;
+
+public class BoardServiceImpl implements BoardService
+{
+	public ModelAndView detail(int no) throws Exception {
+		BoardDomain board = dao.detailBoard(no);
+		
+		ModelAndView mav = new ModelAndView("/board/detail.jsp");
+		mav.addAttribute("board", board);
+		return mav;
+	}
+}

@@ -1,0 +1,9 @@
+package di.quiz;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Quiz 
+{
+	ApplicationContext container = new ClassPathXmlApplicationContext("di/qiz.xml");
+}

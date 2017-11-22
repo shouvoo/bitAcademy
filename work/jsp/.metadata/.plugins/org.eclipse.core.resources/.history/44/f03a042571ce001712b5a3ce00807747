@@ -1,0 +1,28 @@
+package kr.co.mlec.board;
+
+import org.apache.ibatis.session.SqlSession;
+
+import kr.co.mlec.common.MyAppSqlConfig;
+
+public class BoardServiceImpl implements BoardService
+{
+	private SqlSession session = null;
+	private BoardMapper dao = null;
+
+	public BoardServiceImpl() 
+	{
+		session = MyAppSqlConfig.getSqlSessionInstance();
+		dao = session.getMapper(BoardMapper.class);
+	}
+	
+	public void delete(int no) throws Exception 
+	{
+		dao.deleteBoard(no);
+	}	
+	
+	@Override
+	public BoardDomain detail(int no) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.detailBoard(no);;
+	}
+}

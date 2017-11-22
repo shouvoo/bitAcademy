@@ -1,0 +1,78 @@
+<!-- 
+	창을 이동시키거나 창의 사이즈를 변경할때 
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="createPop();">생성</button>
+	<button onclick="movePop();">이동</button>
+	<button onclick="resizePop();">변경</button>
+	
+	
+	<script type="text/javascript">
+	
+		var pop;
+	
+		function createPop()
+		{
+			pop = window.open("", "", "width=400, height=300");
+			resizePop();
+			
+			//onload 창이 열릴때 발생하는 이벤트
+			
+			// 창이 닫힐때 발생하는 이벤트
+			pop.onunload = function()
+			{
+				createPop();
+			}
+		}
+		
+		function movePop()
+		{
+			//좌표를 지정한 이동, 상대, 절대
+			//절대좌표이동 moveTo
+			//pop.moveTo(200, 200);
+			
+			//현재창을 기준으로 이동
+			pop.moveBy(10, 10);
+		}
+		
+		function resizePop()
+		{
+			//pop.resizeTo(500, 500); // 절대방식
+			//pop.resizeBy(10, 10); // 상대방식
+			pop.resizeBy(screen.width, screen.height); // 상대방식
+		}
+	
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

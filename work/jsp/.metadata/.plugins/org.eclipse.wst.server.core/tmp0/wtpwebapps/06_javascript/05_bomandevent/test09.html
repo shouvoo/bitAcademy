@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="button">클릭</button>
+	<span id="span">0</span>
+	
+	
+	<script type="text/javascript">
+	
+		var btn = document.querySelector("#button");
+		var span = document.querySelector("#span");
+		
+		btn.addEventListener("click", func);
+		
+		function func(e)
+		{
+			span.innerHTML = parseInt(span.innerHTML) + 1;
+		}
+		
+		setInterval(function () { btn.click()}, 100);
+	</script>
+</body>
+</html>

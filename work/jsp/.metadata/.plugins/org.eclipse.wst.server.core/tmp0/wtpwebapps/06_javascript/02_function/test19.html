@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<button onclick="start();">시작</button>
+		<button onclick="stop();">중지</button>
+		<h1 id="view"></h1>
+	</div>
+	
+	<script type="text/javascript">
+	
+		var id;
+		
+		function start()
+		{
+			id = setInterval(() => {
+				var date = new Date();
+				var view = document.querySelector("#view");
+				var time = date.toLocaleTimeString();
+				view.innerText = time;
+			}, 1000)
+		}
+		
+		function stop()
+		{
+			clearInterval(id);
+		}
+	
+	</script>
+</body>
+</html>

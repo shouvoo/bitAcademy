@@ -1,0 +1,15 @@
+package di.quiz;
+
+public class Animal 
+{
+	public Animal()
+	{
+		System.out.println("Animal 생성자");
+		
+	}
+	
+	public void info(String msg)
+	{
+		System.out.println(msg);
+	}
+}

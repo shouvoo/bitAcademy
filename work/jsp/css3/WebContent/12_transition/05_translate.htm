@@ -1,0 +1,42 @@
+<html>
+<head>
+<title> transition  </title>
+<meta charset="utf-8" />
+<style>
+	#cl-dashboard{display: none;}
+	#outer > div
+	{
+		width: 100;
+		height: 100;
+		text-align: center;
+		padding: 5px;
+		margin: 5px 10px;
+		color: white;
+		background: black;
+		font-size: 30px;
+		font-weight: bold;
+	}
+	
+	#outer:hover > div 
+	{
+		width: 600;
+	}
+	
+	#outer:hover > .ease {transition: 2s all ease;}
+	#outer:hover > .linear {transition: 2s all linear;}
+	#outer:hover > .ease-in {transition: 2s all ease-in;}
+	#outer:hover > .ease-out {transition: 2s all ease-out;}
+	#outer:hover > .ease-in-out {transition: 2s all ease-in-out;}
+</style>
+</head>
+
+<body>
+<div id="outer">
+    <div class="ease"> ease </div>
+    <div class="linear"> linear </div>
+    <div class="ease-in"> ease-in </div>
+    <div class="ease-out"> ease-out </div>
+    <div class="ease-in-out"> ease-in-out </div>
+</div>
+</body>
+</html>

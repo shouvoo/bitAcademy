@@ -1,0 +1,146 @@
+package basic;
+
+public class StudMain 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		//국어, 영어, 수학 점수를 이용하여 총점, 평균을 계산하시오
+		
+		int k; // 국어점수
+		int e; // 영어점수
+		int c; // 수학점수
+		
+		/*k = 88;
+		e = 87;
+		c = 87;
+		
+		int result = k + e + c;
+		double average = (int)(((double)result / 3) * 100);
+		average = average / 100;
+		선생님 코드 : avg = (double)(int)(result * 100 + 0.5) / 100;
+		*/
+		
+		k = 91;
+		e = 95;
+		c = 98;
+		
+		int result = k + e + c;
+		double average = (int)(((double)result / 3) * 100) + 1;
+		average = average / 100;		
+		
+		System.out.println("총점  :  " + result + "점");
+		System.out.println("평균  :  " + average + "점");
+		System.out.println(average > 90 ? "수" : average > 80 ? "우" : 
+			               average > 70 ? "미" : average > 60 ? "양" : "가");
+		
+		int editAverage = ((int)average / 10) * 10;
+		char changeChar = (char)('A' + 10 - (int)average / 10);
+		System.out.println("editAverage  :  " + editAverage);
+		System.out.println(changeChar);
+		
+		String charValue = "";
+		if(average > 90)
+		{
+			charValue = "수";
+		} else if(average > 80) 
+		{
+			charValue = "우";
+		} else if(average > 70)
+		{
+			charValue = "미";
+		} else if(average > 60)
+		{
+			charValue = "양";
+		} else
+		{
+			charValue = "가";
+		}
+		
+		System.out.println(charValue);
+		
+		if(k > 90 && e > 90 && c > 90)
+		{
+			System.out.println("우등생");
+		}
+		
+		double col1Kor = 50, col1Eng = 30, col1Math = 20;
+		double col2Kor = 40, col2Eng = 30, col2Math = 40;
+		double col3Kor = 30, col3Eng = 20, col3Math = 50;
+		
+		System.out.println((int)(k * (col2Kor / 100)));
+		System.out.println((int)k * (col2Eng / 100)));
+		System.out.println((int)k * (col2Math / 100)));
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

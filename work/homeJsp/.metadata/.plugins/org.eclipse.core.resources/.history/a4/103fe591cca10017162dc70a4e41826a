@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>aTag</title>
+	</head>
+	
+	<body>
+		<a href="http://www.naver.com" target="_blank">나베르</a>
+		<a href="list.html" target="_blank">리스트</a>
+		
+		<a href="http://www.google.com" target="_blank">
+			<img alt="" src="../img/bike0.jpg" width="100">
+		</a>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- 
+	getAttribute() 기능 추가하기
+	
+	el.getAttribute("width");
+
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

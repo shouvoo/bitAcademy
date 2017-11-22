@@ -1,0 +1,16 @@
+package com.omp.repository.mapper;
+
+import java.util.List;
+
+import com.omp.common.Page;
+import com.omp.repository.domain.CurriculumDomain;
+
+public interface CurriculumMapper 
+{
+	public void insertCurriculum(CurriculumDomain db) throws Exception;
+	public void deleteCurriculum(CurriculumDomain db) throws Exception;
+	public void modifyCurriculum(CurriculumDomain db) throws Exception;
+	public List<CurriculumDomain> readCurriculum(Page page) throws Exception;
+	public CurriculumDomain detailCurriculum(CurriculumDomain db) throws Exception;
+	public int totalCurriculum() throws Exception;
+}

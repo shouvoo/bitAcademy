@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button>추가</button>
+	<button>삭제</button>
+	
+	
+	<script type="text/javascript">
+	
+		var $btn0 = $("button")[0];
+		var $btn1 = $("button")[1];
+		
+	
+	</script>
+	
+</body>
+</html>

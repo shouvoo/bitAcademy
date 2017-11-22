@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+</head>
+<body>
+	<button id="btn0">추가</button>
+	<button id="btn1">삭제</button>
+	
+	
+	<script type="text/javascript">
+	
+		var $btn0 = $("button");
+		var $btn1 = $("button");
+		con
+		$btn0.click(function (e){
+			alert("aa")
+		})
+		
+	
+	</script>
+	
+</body>
+</html>

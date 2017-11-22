@@ -1,0 +1,69 @@
+package basic;
+
+public class SwitchMain 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		switch("두부")
+		{
+			case "인사부" :
+				System.out.println("바다");
+				break;
+			case "영업부" : 
+				System.out.println("산");
+				break;
+			case "부부" : 
+				System.out.println("안방");
+				break;
+			default :
+				System.out.println("콩받");
+				break;
+		}
+		
+		int salary = 300;
+		String rank = "과장"; 
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

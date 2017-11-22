@@ -1,0 +1,23 @@
+<!-- 
+	value 기능 추가하기
+	input, textarea, select - value
+	
+	el.value = "aaa";
+	alert(el.value);
+	
+	설정 : val("aaa");
+	추출 : val();	
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	아이디 : <input type="text" name="id" size="20">
+</body>
+</html>

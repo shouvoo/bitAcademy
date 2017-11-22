@@ -1,0 +1,33 @@
+<!-- 
+	문서가 로딩된 이후에 실행하기
+	window.onload = 콜백함수
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	//문서가 전부 로딩된 후 실행된다
+	window.onload = function()
+	{
+		var result = document.querySelector("#result");
+		result.innerText = "테스트";
+	}
+	
+	//지양해야하는 코드 스타일 태그안에 함수를 지정하지 않는다
+	 function aaa()
+	{
+		 /*var result = document.querySelector("#result");
+		result.innerText = "테스트";*/
+	} 
+
+</script>
+
+</head>
+<body onload="aaa();">
+	<h1 id="result"></h1>
+</body>
+</html>

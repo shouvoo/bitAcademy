@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		파라미터 처리
+	 -->
+	 
+	 <h1>파라미터 처리</h1>
+	 <div id="result">실행결과 표시</div>
+	 <p>
+	 	<button id="clearBtn">초기화</button>
+	 	<button id="getBtn">GET 호출</button>
+	 	<button id="postBtn">POST 호출</button>
+	 </p>
+	 
+	 <script type="text/javascript">
+	 
+	 	var $btn1 = $("#clearBtn");
+	 	var $btn2 = $("#getBtn");
+	 	var $btn3 = $("#getBtn");
+	 	
+	 	$$("#clearBtn").on("click", function(e){
+	 		$("#result").text("실행결과표시");
+	 	})
+	 	
+	 	$$("#getBtn").on("click", function(e){
+	 		var xhr = new XMLHttpRequest();
+	 		console.log("aa");
+	 		xhr.onreadystatechange = function()
+	 		{
+	 			if(this.readyState != 4) return;
+	 			
+	 			if(this.status == 200)
+ 				{
+	 				$("#result").html();
+	 				console.log("aa");
+ 				}
+	 		}
+	 		
+	 		xhr.open("GET", "test04?msg=test", true);
+	 		xhr.send();
+	 	})
+	 	
+	 	$("#getBtn").on("click", function(e){
+	 		
+	 	})
+	 
+	 </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		String code = request.getParameter("code");
+		QuizMapper qm = new QuizMapper();
+		Test12_quiz_VO result = qm.codeRead(code);	
+		System.out.println(result);
+
+		PrintWriter out = response.getWriter();
+		out.println(new Gson().toJson(result));
+		out.close();
+		
+	}
+}

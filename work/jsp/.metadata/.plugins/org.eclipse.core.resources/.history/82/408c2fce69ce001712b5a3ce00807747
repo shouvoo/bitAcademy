@@ -1,0 +1,14 @@
+package aop.test04;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class TimeAspect 
+{
+	public void exeTime(ProceedingJoinPoint pjp) throws Exception
+	{
+		//around 방식일 경우에는 공통 기능 클래스에서 핵심 기능 클래싀 메서드를 호출
+		System.out.println("실행 시간을 측정하자");
+		
+		pjp.proceed();
+	}
+}

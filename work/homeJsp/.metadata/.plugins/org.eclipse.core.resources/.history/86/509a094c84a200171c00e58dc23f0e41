@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+
+	// 김수한무 거북이와 두루미 삼천갑자 동박사 워리워리
+
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>jspProj</title>
+	</head>
+	
+	<body>
+		HTML5 + CSS3 + 자바스크립트의 정석
+	</body>
+</html>

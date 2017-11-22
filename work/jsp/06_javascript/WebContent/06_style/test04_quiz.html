@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>
+		<a href="#1" id="link1">크게</a>
+		<a href="#1" id="link2">작게</a>
+	</p>
+	
+	<div>
+		<p>
+			마술사<br>
+			300백년 전 유명한 악당이었던 에더마스크 그가 형을 찾아가고 있는데
+		</p>
+	</div>
+	
+	<script type="text/javascript">
+		var aObj = document.querySelectorAll("p a");
+		var pObj = document.querySelector("div p");
+		for(var i = 0; i < aObj.length; i++)
+		{
+			var btn = aObj[i];
+			btn.val = i;
+			btn.addEventListener("click", fun);
+		}
+		
+		function fun(e)
+		{
+			var target = e.target;
+			var id = target.innerText;
+			console.log(pObj.innerText);
+			//pObj.style["font-size"] = "20px";
+		}
+	
+	
+	</script>
+</body>
+</html>

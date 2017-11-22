@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>
+		<!--  table>tr[height=10]*6>td[align="center" width=50]*7>-->
+		<table>
+		 	<tr height="10">
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 	</tr>
+		 	<tr height="10">
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 	</tr>
+		 	<tr height="10">
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 	</tr>
+		 	<tr height="10">
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 	</tr>
+		 	<tr height="10">
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 	</tr>
+		 	<tr height="10">
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 		<td align="center" width="50"></td>
+		 	</tr>
+		 </table>
+	</body>
+</html>

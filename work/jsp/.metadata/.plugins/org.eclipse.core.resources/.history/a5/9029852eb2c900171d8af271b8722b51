@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<h1>JSON 데이터 처리</h1>
+	<hr>
+	<div id="result">실행 결과</div>
+	<hr>
+	<button id="clearBtn">초기화</button>
+	<button id="sendBtn">호출</button>
+	
+	<script type="text/javascript">
+		$("#clearBtn").click(function(){
+			
+		});
+		
+		$("#sendBtn").click(function(){
+			
+			var xhr = new XMLHttpRequest();
+			console.log(xhr)
+			xhr.onreadystatechange = function()
+			{
+				if(this.readyState != 4) return;
+				
+				if(this.readyState == 200)
+				{
+					$("#result").text(xhr.responseText);	
+				}
+			}
+			
+			xhr.open("GET", "test05", true);
+			xhr.send();
+			
+		});
+	
+	
+	</script>
+</body>
+</html>

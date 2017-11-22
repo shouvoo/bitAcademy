@@ -1,0 +1,46 @@
+<!-- 
+	객체이해하기 - 9
+	
+	prototype 공간활용
+	
+	- 객체들이 공동으로 사용하는 함수나변수를 prototype 에 보관하면 각 객체별로 중복해서 생성할 필요가 없어 
+	메모리가 효율적이다
+	
+	__proto__ 	: 모든 객체들에 기본적으로 할당되는 프로퍼티임
+				: 부모객체의 prototype 공간을 가리킨다
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+		"use strict"
+		
+		function  Member(id, name, age)
+		{
+			this.id = id;
+			this.name = name;
+			this.age = age;
+		}
+		
+		Member.prototype.info = function()
+		{
+			console.log(this.id, this.name, this.age);
+		}
+		
+		//console.dir(Member);
+		
+		var m1 = new Member("kim", "김신", 33);
+		console.dir(m1);
+		
+	</script>
+
+</body>
+</html>

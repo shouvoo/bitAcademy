@@ -1,0 +1,9 @@
+package kr.co.mlec.ajax;
+
+public class Test12_quiz_VO 
+{
+	private String code;
+	private String name;
+	private String lev;
+	private String gCode;
+}

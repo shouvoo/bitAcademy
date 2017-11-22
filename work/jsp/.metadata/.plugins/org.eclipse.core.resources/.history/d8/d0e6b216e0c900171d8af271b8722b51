@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+</head>
+<body>
+	<button id="btn0">추가</button>
+	<button id="btn1">삭제</button>
+	
+	<div id="container"></div>
+	
+	
+	<script type="text/javascript">
+	
+		var cnt = 0;
+		var $btn0 = $("#btn0");
+		var $btn1 = $("#btn1");
+		
+		var con = $("#container");
+		
+		$btn0.click(function (e){
+			
+			if(cnt > 2) 
+			{
+				alert("코드창은 최대 3개까지 생성 가능합니다");
+				return;
+			}
+			
+			var inputDiv = $("<div>").text("코드값")
+			con.append(inputDiv);
+			for(var i = 0; i < 2; i++)
+			{
+				var inputObj = $("<input>");
+				inputDiv.append(inputObj);
+			}
+			cnt++
+			
+		})
+		
+		$btn1.click(function (e){
+			 
+			if(cnt < 2) 
+			{
+				alert("코드창은 최소 1개 여야 합니다");
+				return;
+			}
+			con.children().last().remove();
+			cnt--;
+		})
+		
+	
+	</script>
+	
+</body>
+</html>

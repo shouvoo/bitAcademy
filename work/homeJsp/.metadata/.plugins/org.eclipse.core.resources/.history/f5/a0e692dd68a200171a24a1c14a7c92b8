@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>
+		table>tr[height=10]*6>td[width=50]*7> 테이블을 생성해줌
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- 
+	DOM API
+	
+	속성 추가하자
+	
+	엘리먼트.속성명 = 값
+	<img src="a.jpg" width="200" height="200>
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAdd();">추가</button>
+	<div id="list"></div>
+	<script type="text/javascript">
+	
+		function doAdd()
+		{
+			var imgObj = document.createElement("img");
+			imgObj.src = "pic1.jpg";
+			imgObj.width = 200;
+			imgObj.height = 200;
+			
+			//사용자 정의 속성을 추가하자, 사용자 정의 속성은 추가가 안된다
+			imgObj.msg = "사용자 추가속성"
+			
+			/* var listObj = document.querySelector("#list");
+			listObj.appendChild(imgObj); */
+			 document.querySelector("#list").appendChild(imgObj);
+		}
+	
+	</script>
+	
+</body>
+</html>

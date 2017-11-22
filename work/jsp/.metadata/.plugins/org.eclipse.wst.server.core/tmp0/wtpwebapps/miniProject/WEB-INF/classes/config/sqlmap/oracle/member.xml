@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.member.mapper.MemberMapper">
+
+     <resultMap id="boardDomainMap"  type="boardDomain" >
+     	<result column="no" property="no"/>
+     	<result column="write" property="write"/>
+     	<result column="title" property="title"/>
+     	<result column="contents" property="contents"/>
+     	<result column="reg_date" property="regDate"/>
+     </resultMap>
+     
+	 <resultMap id="commentDomainMap"  type="commentDomain" >
+     	<result column="comment_no" property="commentNo"/>
+     	<result column="no" property="no"/>
+     	<result column="writer" property="writer"/>
+     	<result column="contents" property="contents"/>
+     	<result column="reg_date" property="regDate"/>
+     </resultMap>
+     
+     <select id="getFreeBoardList" resultMap="boardDomainMap">
+     	select * 
+			from(select rownum rnum, a.*
+				from (select *
+					from t_freeboard 
+				 order by no desc)a) 
+			where rnum between #{begin} and #{end}
+     </select>
+     
+     <select id="freeBoardCount" resultType="int">
+     	select count(*) from t_freeboard
+     </select>
+     
+     <select id="commentListBoard" resultMap="commentDomainMap">
+     	select * 
+			from t_freecommentboard 
+			where no = #{no}
+			order by comment_no desc
+     </select>
+     
+     
+     
+     <delete id="deleteBoard" parameterType="int">
+     	delete 
+     		from t_freeboard
+     		where no = #{no}
+     </delete>
+     
+     <select id="detailBoard" parameterType="int" resultMap="boardDomainMap">
+     	select * 
+			from t_freeboard 
+			where no = #{no}
+     </select>
+     
+     <!--   -->
+     <delete id="deleteCommentBoard" parameterType="commentDomain">
+     	delete
+		  	 from t_freecommentboard
+		 	 where no = #{no} and comment_no = #{commentNo}
+     </delete>
+     
+     <!--   -->
+     <update id="commentModifyBoard" parameterType="commentDomain">
+     	update t_freecommentboard 
+			set   	contents = #{contents}, 
+					writer = #{writer} 
+					where no = #{no} and 
+					comment_no = #{commentNo}
+     </update>
+     
+     <select id="commentDetailBoard" parameterType="commentDomain" resultMap="commentDomainMap">
+     	select * 
+			from t17_comment 
+			where no = #{no} and 
+			comment_no = #{commentNo}
+     </select>
+     
+      <update id="modifyBoard" parameterType="boardDomain">
+     	update t_freeboard 
+			set 	title = #{title}, 
+			    	contents = #{contents}, 
+			        writer = #{writer} 
+			    where no = #{no}
+     </update>
+     
+	<select id="getNextVal" resultType="int">
+		select 
+			s17_board_no.nextval 
+			from dual
+	</select>
+	
+	<insert id="insertBoard" parameterType="boardDomain">
+		insert into t_freeboard(
+				no, 
+				title, 
+				writer, 
+				contents 
+			) values ( 
+				s_freeboard_no.nextval, 
+			   #{title}, 
+			   #{writer}, 
+			   #{contents}
+			)
+	</insert>
+	
+	<insert id="commentInsertBoard" parameterType="commentDomain">
+		insert into t_freecommentboard( 
+				comment_no,  
+				no,  
+				writer,  
+				contents  
+			) values (  
+				s_freecommentboard_no.nextval,  
+			   #{no}, 
+			   #{writer}, 
+			   #{contents} 
+			) 
+	</insert>
+	
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

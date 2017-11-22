@@ -1,0 +1,21 @@
+package basic;
+
+public class Calculate 
+{
+
+	public static void main(String[] args) 
+	{
+		// 5 + 3 = 8; 주석 ::: 코딩의 설명이나 부가적 내용을 기술시 사용
+		/*
+			8 = 5 + 3;
+			주석구간
+		*/
+		int x;
+		x = 10;
+		int y = 20, z = 30;
+		System.out.println("x  :  " + x);
+		System.out.println("y  :  " + y);
+		System.out.println("z  :  " + z);
+	}
+
+}

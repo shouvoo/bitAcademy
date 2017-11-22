@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<h1>JSON 데이터 처리</h1>
+	<hr>
+	<div id="result">실행 결과</div>
+	<hr>
+	<button id="clearBtn">초기화</button>
+	<button id="sendBtn">호출</button>
+	
+	<script type="text/javascript">
+		$("#clearBtn").click(function(){
+			$("#result").text("실행 결과");	
+		});
+		
+		$("#sendBtn").click(function(){
+			
+			/* $.ajax({
+			type : "GET" or "POST",
+			url : "호출경로",
+			data : 파라미터 string or object,
+			dataType : 결과타입 처리(json, xml),
+			success : 함수(성공시 처리할 파트 부분),
+			error : 
+		}); */
+			
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function()
+			{
+				
+				if(xhr.readyState != 4) return;
+				
+				if(xhr.status== 200)
+				{
+					//var members = eval(xhr.responseText); // 배열이 아닌 객체가 한개일때는  eval("(" + xhr.responseText + ")"); 로 묶어준다
+					//var members = eval(xhr.responseText); // ECMA 5버젼 이전 방식
+					var members = JSON.parse(xhr.responseText); // ECMA 5버젼 이후 방식
+					var html = "";
+					
+					for(var i = 0; i < members.length; i++)
+					{
+						var m = members[i];
+						html += "<p>이름 : " + m.name + ", 나이 : " + m.age + "</p>";
+					}
+
+					$("#result").html(html);	
+					
+				}
+			}
+			
+			xhr.open("GET", "test05", true);
+			xhr.send();
+			
+		});
+	
+	
+	</script>
+</body>
+</html>

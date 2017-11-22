@@ -1,0 +1,23 @@
+<!-- 
+	checked, disabled 설정 기능 추가하기
+	el.checked = (true | false);
+	el.disabled = (true | false);
+	
+	prop("checked", true | false);
+	prop("disabled", true | false);
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button>설정하기</button>
+	<button>가져오기</button>
+	
+	<div>CSS 추가 테스트</div>
+
+</body>
+</html>

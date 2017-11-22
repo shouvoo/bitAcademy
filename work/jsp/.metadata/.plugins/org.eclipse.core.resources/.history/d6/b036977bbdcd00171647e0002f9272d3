@@ -1,0 +1,19 @@
+package di.test08;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class Menu 
+{
+	@Autowired
+	private ISand sand;
+	
+	public Menu()
+	{
+		System.out.println("Menu 기본 생성자");
+	}
+	
+	public void print()
+	{
+		sand.info();
+	}
+}

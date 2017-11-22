@@ -1,0 +1,64 @@
+<!-- 
+	DOM(Document Ojbect Model)
+	-> 웹브라우져의 자바스크립트 엔진이 html 태그를 읽고 각태그를 자바스크립트 객체로 생성한다
+	-> dom tree : 태그와 태그의 관계(부모, 형제)를 표현하기 위해서 트리구조를 사용
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAction(1);">태그 선택자</button>
+	<button onclick="doAction(2);">아이디  선택자</button>
+	<button onclick="doAction(3);">클래스  선택자</button>
+	
+	<div>테스트1</div>
+	<div id="a">테스트2</div>
+	<div class="b">테스트3</div>
+
+
+	<script type="text/javascript">
+		/*
+			ES5 전에 사용하던 방식
+			DOM 객체 접근 : window.document 객체 활용 
+			아이디 : window.document.getElementById("아이디");
+			 		var ele = document.getElementById("아이디");
+			 		
+			태그 : document.getElementsByTagName("태그명");
+			 		//여러개의 엘리먼트가 담긴 형태의 객체로 변환
+			 		// HTMLCollection, 배열처럼 꺼내서 사용함
+					var eleList = document.getElementsByTagName("div");
+			 		
+			클래스 : document.getElementsByClassName("클래스명");
+					var eleList = document.getElementsByClassName("a");
+		*/
+		function doAction(type)
+		{
+			switch(type)
+			{
+				case 1 : // 태그선택자
+					var list = document.getElementsByTagName("div");
+					for(var i = 0; i < list.length; i++)
+					{
+						console.log(list[i]);
+					}
+					break;
+					
+				case 2 :  // 아이디
+					var id = document.getElementById("a");
+					console.log(id);
+					break;
+					
+				case 3 :  // 클래스
+					var list = document.getElementsByClassName("b");
+					console.log(list[0]);
+					break;
+			}
+		}
+	
+	</script>
+</body>
+</html>

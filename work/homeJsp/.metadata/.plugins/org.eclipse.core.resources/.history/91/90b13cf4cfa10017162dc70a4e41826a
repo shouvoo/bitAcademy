@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>aTag</title>
+		
+		<style>
+		
+			font{background-color: #ff0;
+			color : #faa;
+			}
+			
+			div{background-color: #00f;
+			color : #ff;
+			}
+			
+			.aaa
+			{
+				color: #0f0;
+			}
+			
+		
+		</style>
+		
+	</head>
+	
+	<body>
+	<font style="font-size: 40px; color: #ff0000">트리케라톱스</font>
+	                                 <!-- R G B -->
+	<font>이구아노돈</font>
+	<div>안킬로사우루스</div>
+	<div>프테라노돈</div>
+	<div>성희 사우루스</div>
+	
+		<a href="http://www.naver.com" target="_blank">나베르</a>
+		<a href="list.html" target="_blank">리스트</a>
+		
+		<a href="http://www.google.com" target="_blank">
+			<img alt="" src="../img/bike0.jpg" width="100">
+		</a>
+	</body>
+</html>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.member.mapper.MemberMapper">
+
+     <resultMap id="boardMap"  type="board" >
+     	<result column="no" property="no"/>
+     	<result column="write" property="write"/>
+     	<result column="title" property="title"/>
+     	<result column="content" property="content"/>
+     	<result column="reg_date" property="regDate"/>
+     </resultMap>
+     
+	 <resultMap id="commentBoardMap"  type="commentBoard" >
+     	<result column="comment_no" property="commentNo"/>
+     	<result column="no" property="no"/>
+     	<result column="writer" property="writer"/>
+     	<result column="content" property="content"/>
+     	<result column="reg_date" property="regDate"/>
+     </resultMap>
+     
+     <resultMap id="uploadMap"  type="upload" >
+     	<result column="file_path" property="filePath"/>
+     	<result column="ori_name" property="oriName"/>
+     	<result column="systemName" property="systemName"/>
+     	<result column="file_size" property="fileSize"/>
+     	<result column="no" property="no"/>
+     	<result column="file_no" property="fileNo"/>
+     </resultMap>
+     
+     <select id="getMemberList" resultMap="boardMap">
+     	select *
+     		from t17_board
+     		order by no desc
+     </select>
+     
+     <delete id="deleteBoard" parameterType="int">
+     	delete 
+     		from t17_board 
+     		where no = #{no}
+     </delete>
+     
+     <select id="detailBoard" parameterType="int" resultMap="boardMap">
+     	select * 
+			from t17_board 
+			where no = #{no}
+     </select>
+     
+     <delete id="deleteCommentBoard" parameterType="commentBoard">
+     	delete
+		  	 from t17_comment
+		 	 where no = #{no} and comment_no = #{commentNo}
+     </delete>
+     
+     <update id="commentModifyBoard" parameterType="commentBoard">
+     	update t17_comment 
+			set   	content = #{content}, 
+					writer = #{writer} 
+					where no = #{no} and 
+					comment_no = #{commentNo}
+     </update>
+     
+     <select id="commentDetailBoard" parameterType="commentBoard" resultMap="commentBoardMap">
+     	select * 
+			from t17_comment 
+			where no = #{no} and 
+			comment_no = #{commentNo}
+     </select>
+     
+      <update id="modifyBoard" parameterType="board">
+     	update t17_board 
+			set 	title = #{title}, 
+			    	content = #{content}, 
+			        writer = #{writer} 
+			    where no = #{no}
+     </update>
+     
+	<select id="getNextVal" resultType="int">
+		select 
+			s17_board_no.nextval 
+			from dual
+	</select>
+	
+	<insert id="insertBoard" parameterType="board">
+		insert into t17_board(
+				no, 
+				title, 
+				writer, 
+				content 
+			) values ( 
+				#{no}, 
+			   #{title}, 
+			   #{writer}, 
+			   #{content}
+			)
+	</insert>
+	
+	<insert id="insertFileBoard" parameterType="upload">
+		insert into t17_board_file( 
+				file_no,  
+				no,  
+				file_path,  
+				ori_name,  
+				system_name,  
+				file_size  
+			) values (  
+				s17_board_file_no.nextval,  
+				#{no},  
+			 	 #{filePath}, 
+			 	 #{oriName}, 
+			 	 #{systemName}, 
+			 	 #{fileSize} 
+			) 
+
+	</insert>
+	
+	<insert id="commentInsertBoard" parameterType="commentBoard">
+		insert into t17_comment( 
+				comment_no,  
+				no,  
+				writer,  
+				content  
+			) values (  
+				t17_comment_no.nextval,  
+			   #{no}, 
+			   #{writer}, 
+			   #{content} 
+			) 
+	</insert>
+	
+	<select id="commentListBoard" parameterType="int" resultMap="commentBoardMap">
+     	select * 
+		     from t17_comment 
+		    where no = #{no}
+		    order by comment_no desc 
+     </select>
+     
+     
+     <select id="fileBoard" parameterType="int" resultMap="uploadMap">
+     	select * 
+			    from t17_board_file 
+			    where no = #{no}
+			    order by file_no desc
+     </select>
+	
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

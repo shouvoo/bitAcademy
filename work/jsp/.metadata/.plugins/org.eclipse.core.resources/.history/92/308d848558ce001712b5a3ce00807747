@@ -1,0 +1,24 @@
+package aop.test02;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			System.out.println("MemberController.execute 메서드 호출된 시간 : " + sdf.format(new Date()));
+			
+			Controller controller = new BoardController();
+			controller.execute();
+			
+			System.out.println("MemberController.execute 메서드 호출된 시간 : " + sdf.format(new Date()));
+			controller = new MemberController();
+			controller.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

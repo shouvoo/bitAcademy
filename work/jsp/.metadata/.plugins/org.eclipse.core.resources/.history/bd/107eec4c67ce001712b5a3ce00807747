@@ -1,0 +1,24 @@
+package aop.test04;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		try {
+			//proxy-target-class="true" 로 설정해야 구현 클래스로 접근 가능함
+			ApplicationContext context = new ClassPathXmlApplicationContext("aop/test1.xml");
+			Controller controller = context.getBean("board", BoardController.class);
+			controller.execute();
+			controller = context.getBean("member", MemberController.class);
+			controller.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,20 @@
+package basic;
+
+public class IfMain 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		String sss = "±âº»°ª";
+		if(false)
+		{
+			System.out.println("³­ ÂüÀÌ¾ß");
+			sss = "ÂüÂüÂü";
+		} else {
+			sss = "»½»½»½";
+		}
+		System.out.println(sss);
+	}
+
+}

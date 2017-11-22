@@ -1,0 +1,12 @@
+package aop.test01;
+
+public class BoardController implements Controller
+{
+
+	@Override
+	public void execute() throws Exception 
+	{
+		
+	}
+	
+}

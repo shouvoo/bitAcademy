@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h3, div {
+	margin: 0px;
+	width: 80%;
+	border: 2px solid #334455;
+	box-sizing: border-box;
+}
+h3 { background: #8899aa; }
+div {
+	transition: 1S;
+	position: relative;
+	height: 100px;
+	overflow: hidden;
+}
+.hidden { opacity: 0; height: 0px; }
+.show { opacity: 1; height: 100px; }
+</style>
+</head>
+<body>
+	<h2>어코디언 기능</h2>
+	<h3>오늘은 자바스크립트 CSS 적용</h3>
+	<div class="hidden">
+		오늘은 자바스크립트 CSS 적용<br />
+		오늘은 자바스크립트 CSS 적용<br />
+		오늘은 자바스크립트 CSS 적용
+	</div>
+<script>
+
+document.querySelector("h3").addEventListener("click", (e) => {
+	var dObj = document.querySelector("div");
+	var cls = dObj.getAttribute("class");
+	if   (cls == "hidden") cls = "show"; 
+	else  cls = "hidden";
+	dObj.setAttribute("class", cls);
+});
+</script>	
+</body>
+</html>
+
+
+
+
+

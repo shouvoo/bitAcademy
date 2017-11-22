@@ -1,0 +1,33 @@
+package nio_p;
+
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
+
+public class TCPServerMain {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+
+		ServerSocketChannel server = ServerSocketChannel.open();
+		
+		server.configureBlocking(true);
+		
+		server.bind(new InetSocketAddress(7777));
+		System.out.println("서버시작");
+		Charset charset = Charset.forName("UTF-8");
+		
+		while(true)
+		{
+			
+			SocketChannel client = server.accept();
+			System.out.println(((InetSocketAddress)client.getRemoteAddress()).getHostName()+" 접속");
+			ByteBuffer buf = charset.encode("안녕 난 서버라고 해");
+			client.write(buf);
+			
+		}
+	}
+
+}

@@ -1,0 +1,89 @@
+<!-- 
+	BOM
+	
+	생창 띄우기
+	widnow.open(url, target, option);
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onClick="openPop(1)">팡업창1</button>
+	<button onClick="openPop(2)">팡업창2</button>
+	<button onClick="openPop(3)">팡업창3</button>
+	<button onClick="openPop(4)">팡업창4</button>
+	
+	<h1 id="result"></h1>
+	
+	<script type="text/javascript">
+	
+	function openPop(type)
+	{
+		switch(type)
+		{
+			case 1:
+				//첫번째 매개변수 : 이동할주소
+				//두번째 매개변수 : 새로열릴 창의 이름 이름을 정해주면 열여있는 창에서 새로 열림, 창의 이름을 설정해 주지않는다면 새로운창이 계속 열림
+				window.open("http://www.naver.com", "pop1", "width=400, height=300");
+				break;
+				
+			case 2:
+				window.open("http://www.naver.com", "", "width=400, height=300");
+				break;
+				
+			case 3:
+				console.log(screen.width, screen.height);
+				
+				var left = (screen.width - 400) / 2;
+				var top = (screen.height - 300) / 2;
+				
+				window.open("http://www.naver.com", "pop3", "top=" + top + ", left=" + left + ", width=400, height=300");
+				break;
+				
+			case 4:
+				window.open("test01_child.html", "", "width=400, height=300");
+				break;
+		}
+	}
+	
+	function doResult(msg)
+	{
+		var result = document.querySelector("#result")
+		result.innerText = msg;
+	}
+	
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+
+9월 27, 2017 10:12:09.16 NEW SESSION
+9월 27, 2017 10:12:09.16 [4704:5012:0927/101209.159:ERROR:gpu_process_transport_factory.cc(919)] Lost UI shared context.
+
+9월 28, 2017 11:42:22.90 NEW SESSION
+9월 28, 2017 11:42:22.90 [3784:1232:0928/114222.894:ERROR:service_manager.cc(156)] Connection InterfaceProviderSpec prevented service: content_plugin from binding interface: memory_instrumentation::mojom::Coordinator exposed by: content_browser
+9월 28, 2017 12:01:47.03 [3784:1232:0928/120147.033:ERROR:service_manager.cc(156)] Connection InterfaceProviderSpec prevented service: content_plugin from binding interface: memory_instrumentation::mojom::Coordinator exposed by: content_browser
+
+10월 11, 2017 17:24:41.37 NEW SESSION
+10월 11, 2017 17:24:41.37 [3760:5928:1011/172441.357:ERROR:gpu_process_transport_factory.cc(930)] Lost UI shared context.
+
+10월 18, 2017 14:43:47.80 NEW SESSION
+10월 18, 2017 14:43:47.80 [5944:7048:1018/144347.805:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+
+10월 20, 2017 17:02:42.53 NEW SESSION
+10월 20, 2017 17:02:42.53 [5220:2512:1020/170242.515:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+
+10월 23, 2017 11:39:13.16 NEW SESSION
+10월 23, 2017 11:39:13.16 [2128:3044:1023/113913.159:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.160:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.161:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.163:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.164:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.165:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.166:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.167:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.168:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.169:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.170:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.171:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.171:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.172:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+10월 23, 2017 11:39:13.17 [2128:3044:1023/113913.173:ERROR:CONSOLE(270)] "Error: Empty event listener's location", source: chrome-devtools://devtools/bundled/inspector.js (270)
+
+10월 27, 2017 15:17:53.99 NEW SESSION
+10월 27, 2017 15:17:53.99 [2216:1156:1027/151753.963:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+10월 27, 2017 16:26:18.07 [2216:1156:1027/162618.078:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+10월 27, 2017 16:26:18.51 [2216:6456:1027/162618.509:ERROR:CONSOLE(145)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('http://bootstrapk.com') does not match the recipient window's origin ('https://www.google.co.kr').", source: chrome-search://most-visited/single.js (145)
+
+10월 31, 2017 09:53:39.03 NEW SESSION
+10월 31, 2017 09:53:39.03 [7052:6676:1031/095339.033:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+10월 31, 2017 14:12:54.46 [7052:4484:1031/141254.469:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+10월 31, 2017 14:14:09.50 [7052:4484:1031/141409.500:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+
+11월 07, 2017 09:29:09.34 NEW SESSION
+11월 07, 2017 09:29:09.34 [5544:4868:1107/092909.343:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2

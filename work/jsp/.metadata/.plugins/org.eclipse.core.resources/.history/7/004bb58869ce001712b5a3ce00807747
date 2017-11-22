@@ -1,0 +1,9 @@
+package aop.test04;
+
+public class TimeAspect 
+{
+	public void exeTime() throws Exception
+	{
+		System.out.println("실행 시간을 측정하자");
+	}
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAction(1);">태그 선택자</button>
+	<button onclick="doAction(2);">아이디  선택자</button>
+	<button onclick="doAction(3);">클래스  선택자</button>
+	
+	<div>테스트1</div>
+	<div id="a">테스트2</div>
+	<div class="b">테스트3</div>
+	
+	<script type="text/javascript">
+		//ES5 부터 권장
+		//querySelector(css선택자) 	: 결과가 1개만
+		//querySelectorAll(css선택자) 	: 결과가 여러개
+		
+		function doAction(type)
+		{
+			var obj;
+			switch(type)
+			{
+				case 1 : // 태그선택자
+					obj = document.querySelectorAll("div");
+					break;
+
+				case 2 :  // 아이디
+					obj = document.querySelector("#a");
+					break;
+					
+				case 3 :  // 클래스
+					obj = document.querySelectorAll(".b");
+					break;
+			}
+			
+			if(obj.length)
+			{
+				for(var i = 0; i < obj.length; i++)
+				{
+					console.log(obj[i]);
+				}
+			} else 
+			{
+				console.log(obj);
+			}
+			
+		}
+		
+	
+	</script>
+</body>
+</html>

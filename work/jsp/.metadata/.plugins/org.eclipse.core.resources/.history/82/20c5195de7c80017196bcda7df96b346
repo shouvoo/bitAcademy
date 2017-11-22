@@ -1,0 +1,22 @@
+<!-- 
+	getAttribute() 기능 추가하기
+	
+	el.getAttribute("width");
+	
+	추출 : attr("속성명");
+	
+	예> attr("width");
+
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	.hidden
+	{
+		border: 1px solid;
+		width: 500px;
+		height: 0px;
+		margin-top: -20px;
+		overflow: hidden;
+		
+	}
+	
+	h3
+	{
+		border: 1px solid gray;
+		background-color: gray;
+		width: 500px;
+		height: 25px;
+		
+	}
+
+</style>
+
+</head>
+<body>
+	<h2>어코디언 기능</h2>
+	<h3>오늘은 자바스크립트 CSS적용</h3>
+	<div class="hidden" id="tunnel">
+		오늘은 자바스크립트 CSS적용</br>
+		오늘은 자바스크립트 CSS적용</br>
+		오늘은 자바스크립트 CSS적용
+	</div>
+	
+	<script type="text/javascript">
+	
+		var cnt = 0;
+		var intervalId;
+		var h3Obj = document.querySelector("h3");
+		var divObj = document.querySelector(".hidden");
+		h3Obj.addEventListener("click", func);
+		
+		function func(e)
+		{
+			intervalId = setInterval(move, 10);
+		}
+		
+		function move(val)
+		{
+			console.log(val)
+			cnt++;
+			divObj.style.height = (cnt * 2) + "px";
+			
+			if(divObj.style.height == "100px" || divObj.style.height == "0px") clearInterval(intervalId);
+		}
+	</script>
+	
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+package ajax;
+
+import org.apache.ibatis.session.SqlSession;
+
+import common.MyAppSqlConfig;
+
+public class QuizMapper 
+{
+	
+	private final static String NS = "ajax.QuizMapper.";
+	
+	private static SqlSession session;
+
+	public QuizMapper() 
+	{
+		session = MyAppSqlConfig.getSqlSessionInstance();
+	}
+	
+	public List<Test11> read()
+	{
+		return session.selectList(NS + "read");
+	}
+}
+
+
+
+
+
+
+
+
+
+

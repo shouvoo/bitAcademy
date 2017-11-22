@@ -1,0 +1,35 @@
+package basic;
+
+public class forMain 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		//int i = 0;
+		for(int i = 5; i < 10; i++)
+		{
+			System.out.println("¼±»ý´ÔÀº ±Í¿©¿ö¿ä" + i);
+		}
+		
+		//System.out.println(i);
+		
+		int sum = 0;
+		for(int i = 0; i < 33; i++)
+		{
+			
+			sum += (i * 3);
+			
+		}
+		System.out.println(sum);
+		
+		
+		for (int i = 0; i < 20; i++) 
+		{
+			System.out.println((i % 3) + "  : " + i);
+		}
+	}
+	
+	
+
+}

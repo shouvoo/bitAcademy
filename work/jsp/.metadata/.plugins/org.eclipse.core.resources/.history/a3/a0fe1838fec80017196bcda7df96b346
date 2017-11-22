@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+	
+		function doCheck(val)
+		{
+			$("input[name='menu']").prop("checked", val);
+			
+			alert($("#all").prop("checked"));
+		}
+
+	</script>
+
+</body>
+</html>

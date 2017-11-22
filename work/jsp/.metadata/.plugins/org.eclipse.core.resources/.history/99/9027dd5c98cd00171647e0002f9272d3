@@ -1,0 +1,22 @@
+package di.test03;
+
+interface TV
+{
+	void powerOn();
+	void powerOff();
+}
+
+public class main 
+{
+	public static void setTV(TV tv)
+	{
+		tv.powerOn();
+		tv.powerOff();
+	}
+	
+	public main(String[] args) 
+	{
+		setTV(TVFactory.getBean("sony"));
+		setTV(TVFactory.getBean("lg"));
+	}
+}

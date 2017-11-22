@@ -1,0 +1,9 @@
+package kr.co.mlec.board;
+
+public class BoardServiceImpl implements BoardService
+{
+	public String delete(int no) throws Exception {
+		dao.deleteBoard(no);
+		return "redirect:/board/list.do";
+	}	
+}

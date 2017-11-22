@@ -1,0 +1,144 @@
+<!-- 
+	FORM 관련 체크사항 - 1
+	form 이 submin 되는 시점쳉 체크 사항이 있다면
+	- onsubmit="return false;" - submit 이 최소됨
+	- onsubmit="return false;" -  이외에 값이 넘어오면 submit 이 실행됨
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="mForm" action="aaa.html" onsubmit="return doCheck();">
+		id : <input type="text" name="id"><br>
+		pass : <input type="password" name="pass"><br>
+		pass 확인 : <input type="password" name="pass2"><br>
+		<button>확인</button>
+		<button type="button" onclick="doCheck2();">확인2</button>
+	
+	</form>
+	
+	<script type="text/javascript">
+	function doCheck2()
+		{
+			/*
+				입력된 값을 체크하는데 올바르지 않다면 return false; 반환해서 취소해준다
+				
+			*/
+			
+			var f = document.mForm;
+			
+			var idObj = f.id;
+			var passObj = f.pass;
+			var pass2Obj = f.pass2;
+			
+			if(isEmpty(idObj, "아이디를 입력하세요")) return false;
+			if(isEmpty(passObj, "패스워드를 입력하세요")) return false;
+			if(isEmpty(pass2Obj, "확인 패스워드를 입력하세요")) return false;
+			
+			
+			if(passObj.value != pass2Obj.value)
+			{
+				alert("패스워드가 틀립니다 다시 입력해 주세요");
+				
+				
+				pass2Obj.value = "";
+				pass2Obj.focus ();
+				passObj.select();
+				return false;
+			}
+			
+			f.action = "http://www.daum.net";
+			f.submit();
+		}
+	
+	
+		function doCheck()
+		{
+			/*
+				입력된 값을 체크하는데 올바르지 않다면 return false; 반환해서 취소해준다
+				
+			*/
+			
+			var f = document.mForm;
+			
+			var idObj = f.id;
+			var passObj = f.pass;
+			var pass2Obj = f.pass2;
+			
+			if(isEmpty(idObj, "아이디를 입력하세요")) return false;
+			if(isEmpty(passObj, "패스워드를 입력하세요")) return false;
+			if(isEmpty(pass2Obj, "확인 패스워드를 입력하세요")) return false;
+			
+			
+			if(passObj.value != pass2Obj.value)
+			{
+				alert("패스워드가 틀립니다 다시 입력해 주세요");
+				
+				
+				pass2Obj.value = "";
+				pass2Obj.focus ();
+				passObj.select();
+				return false;
+			}
+			
+			return true;
+		}
+		
+		function isEmpty(target, msg)
+		{
+			if(target.value == "")
+			{
+				alert(msg);
+				target.focus();
+				return true;
+			}
+			return false;
+		}
+		
+		var f = document.modFrom;
+		f.id.value = document.mForm.id.value;
+		f.submit();
+	</script>
+	
+	<form name="modForm" action="mod.html">
+		<input type="hidden" name="id">
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

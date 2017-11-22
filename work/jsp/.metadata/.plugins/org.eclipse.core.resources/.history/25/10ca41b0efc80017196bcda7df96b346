@@ -1,0 +1,36 @@
+<!-- 
+	태그 생성 기능 추가하기
+	
+	document.createElement("h1");
+	
+	$("<h1>");
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<button>태그추가하기</button>
+	
+	<div id="list"></div>
+	<div id="list"></div>
+	
+	<script type="text/javascript">
+	
+		var $btn = $("button")[0];
+		
+		$btn.addEventListener("click", function(e) {
+			var h1Obj = $("<h1>").text("테스트");
+			console.log(h1Obj)
+			//$("#list")[0].apeendChild(h1Obj[0]);
+			$("#list").append(h1Obj);
+		})
+	
+	</script>
+</body>
+</html>

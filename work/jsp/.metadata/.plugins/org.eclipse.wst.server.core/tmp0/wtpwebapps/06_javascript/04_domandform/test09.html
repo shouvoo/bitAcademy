@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>
+		<label>문자열</label>
+		<input type="text">
+		
+	</p>
+	<p>
+		<label>비밀번호</label>
+		<input type="password">
+	</p>
+	
+	<div id="field">
+	
+	</div>
+	
+	<div>
+		<ul>
+			<li onclick="doAdd('input', '', '문자열');">문자열 박스 생성</li>
+			<li onclick="doAdd('input', 'password', '패스워드');">비밀번호 박스 생성</li>
+			<li onclick="doAdd('input', 'checkbox', '체크박스');">체크박스 생성</li>
+			<li onclick="doAdd('input', 'radio', '라디오버튼');">라디오버튼 생성</li>
+			<li onclick="doAdd('button');">버튼생성</li>
+			<li onclick="doAdd('combo');">콤보박스생성</li>
+		</ul>
+	</div>
+	
+	
+	
+	<script type="text/javascript">
+		
+		var fieldObj = document.querySelector("#field");
+	
+		function doAdd(type, att, val)
+		{
+			var containerObj = document.createElement("div");
+			fieldObj.appendChild(containerObj);
+			switch(type)
+			{
+				case "input" : 
+					var inputObj = document.createElement("input");
+					var labelObj = document.createElement("label"); 
+					inputObj.type = att;
+					containerObj.innerText = val;
+					containerObj.appendChild(inputObj);
+					containerObj.appendChild(labelObj);
+					labelObj.innerText = "aaaaaa";
+					break;
+					
+				case "button" : 
+					var buttonObj = document.createElement("button");
+					buttonObj.innerText = "버튼";
+					containerObj.appendChild(buttonObj);
+					break;
+					
+				case "combo" : 
+					var selectObj = document.createElement("select");
+					var optionObj;
+					containerObj.appendChild(selectObj)
+					
+					for(var i = 0; i< 5; i++)
+					{
+						optionObj = document.createElement("option");
+						optionObj.innerText = "속성" + i;
+						selectObj.appendChild(optionObj);
+					}
+
+					break;
+			}
+		}
+	
+	</script>
+	
+</body>
+</html>

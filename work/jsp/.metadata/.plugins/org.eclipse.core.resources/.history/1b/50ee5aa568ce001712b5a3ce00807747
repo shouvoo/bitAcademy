@@ -1,0 +1,6 @@
+package aop.test04;
+
+public class TimeAspect 
+{
+
+}

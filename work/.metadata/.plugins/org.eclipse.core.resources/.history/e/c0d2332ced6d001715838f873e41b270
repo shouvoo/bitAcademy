@@ -1,0 +1,51 @@
+package basic;
+
+public class Calculate 
+{
+
+	public static void main(String[] args) 
+	{
+		// 5 + 3 = 8; 주석 ::: 코딩의 설명이나 부가적 내용을 기술시 사용
+		/*
+			8 = 5 + 3;
+			주석구간
+		*/
+		int x;
+		x = 10;
+		int y = 20, z, a = 10 + 20;
+		//콤마를 사용 변수를 동시에 선언할수있다
+		//변수이름은 숫자로 시작할수 없다
+		//특수기호 사용불가 단! 사용가능한 특수기호는 _, $ 사용가능
+		//변수이름은 숫자로 시작 불가
+		int b = y + a;
+		
+		System.out.println("x  :  " + x);
+		System.out.println("y  :  " + y);
+		System.out.println("a  :  " + a);
+		System.out.println("b  :  " + b);
+		
+		//변수명으로 한글을 사용할수 있으나 사용을 지양한다
+		//int 국어 = 88;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		trace("x  :  " + x);
+		trace("y  :  " + y);
+		trace("a  :  " + a);
+		trace("b  :  " + b);
+	}
+	
+	public static void trace(String arg)
+	{
+		System.out.println(arg);
+	}
+
+}

@@ -1,0 +1,48 @@
+package ajax;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.mvc.Controller;
+import org.springframework.web.mvc.ModelAndView;
+import org.springframework.web.mvc.RequestMapping;
+
+import kr.co.mlec.lotto.LottoDomain;
+import kr.co.mlec.lotto.LottoMapper;
+
+@WebServlet("/08_ajax/test11")
+@Controller
+public class Test11_quiz
+{
+	@RequestMapping("/lotto/play.do")
+	public ModelAndView play() 
+	{
+		LottoMapper lm = new LottoMapper();
+		List<LottoDomain> ld = lm.read();	
+
+		for (LottoDomain lottoDomain : ld) 
+		{
+			List<String> lottoList = new ArrayList<>();
+			String [] lottoArr = lottoDomain.getLottoNumbers().split(",");
+			
+			for (String l : lottoArr) 
+			{
+				lottoList.add(l);
+			}
+		
+			lottoDomain.setLottoList(lottoList);
+		}
+		
+		
+		ModelAndView mav = new ModelAndView("/lotto/play.jsp");
+		mav.addAttribute("lottoList", ld);
+		return mav;
+	}
+}

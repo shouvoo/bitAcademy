@@ -1,0 +1,125 @@
+/*
+ *   Dispatcher 의 역활
+ *   - 사용자의 모든 요청을 최초로 받는다.(web.xml 등록)
+ *   - 사용자의 요청에 해당하는 작업클래스(Controller)를 찾아서 호출
+ *   - 컨트롤러의 공통적인 작업을 일반화 시켜 처리하게 한다.
+ *     : 파라미터 처리하기
+ *     : 화면에 사용할 데이터를 공유
+ *     : 페이지 이동
+ */
+package org.springframework.web.mvc;
+
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.Map;
+import java.util.Set;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class DispatcherServlet extends HttpServlet {
+	
+	private URLHandlerMapping mapping;
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		String controllers = config.getInitParameter("controllers");
+		try {
+			mapping = new URLHandlerMapping(controllers);
+		} catch (Exception e) {
+			throw new ServletException(e);
+		}
+	}
+	
+	@Override
+	protected void service(
+			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// 특정 URL에 대한 작업 클래스를 호출한다.
+		// - 사용자 요청 URL 확인하기
+		String uri = request.getRequestURI();
+		
+		// - 사용자 요청 URL에서 웹어플리케이션 경로 제거하기
+		// /lec05_mvc
+		String contextPath = request.getContextPath();
+		
+		uri = uri.substring(contextPath.length());
+		try {
+			
+			// URLHandlerMapping 클래스 활용
+			CtrlAndMethod cam = mapping.getCtrlAndMethod(uri);
+			
+			// 사용자 호출 uri가 존재하지 않을 경우 처리
+			if (cam == null) {
+				throw new Exception("잘못된 URL입니다.");
+			}
+			
+			Method m = cam.getMethod();
+			Object target = cam.getTarget();
+			
+			// 파라미터 처리 클래스
+			PreParameterProcess ppp = new PreParameterProcess();
+			Object[] params = ppp.process(m, request, response);
+//			ModelAndView mav = (ModelAndView)m.invoke(target, params);
+//			String view = mav.getView();
+			
+			// 반환타입 처리 
+			Class<?> rType = m.getReturnType();
+			String rName = rType.getSimpleName();
+			String view = "";
+			ModelAndView mav = null;
+			
+			switch (rName) {
+			case "String":
+				view = (String)m.invoke(target, params);
+				break;
+			case "void":
+				m.invoke(target, params);
+				view = uri.replace(".do", ".jsp");
+				break;
+			case "ModelAndView":
+				mav = (ModelAndView)m.invoke(target, params);
+				view = mav.getView();
+				break;
+			}
+			
+
+			if (view.startsWith("redirect:")) {
+				view = view.substring("redirect:".length());
+				if (view.charAt(0) == '/') view = contextPath + view;
+				
+				response.sendRedirect(view);
+			}
+			else {
+				if (mav != null) {
+					// forward 방식일 경우에는 mav 객체에 있는 맵의 데이터를 꺼내서
+					// 공유영역에 등록시키는 작업을 진행한다.
+					Map<String, Object> model = mav.getModel();
+					Set<String> keys = model.keySet();
+					for (String key : keys) {
+						request.setAttribute(key, model.get(key));
+					}
+				}
+				RequestDispatcher rd = request.getRequestDispatcher(view);
+				rd.forward(request, response);
+			}
+		} catch (Exception e) {
+			throw new ServletException(e);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

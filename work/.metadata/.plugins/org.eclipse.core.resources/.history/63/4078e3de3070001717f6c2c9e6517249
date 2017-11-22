@@ -1,0 +1,14 @@
+package basic;
+
+public class VarableMain 
+{
+	public static void main(String[] args) 
+	{
+		int x = 10; 
+		byte bb = 127; //byte 허용범위는 -127 ~ 127 까지 허용함
+		
+		
+		System.out.println(bb);
+		System.out.println(x);
+	}
+}

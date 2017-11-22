@@ -1,0 +1,128 @@
+<!-- 
+	
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<h1>Ajax 통신으로 서버에서 받은 데이터</h1>
+	<div id="result"></div>
+	<br>
+	<button>Ajax 호출</button>
+	
+	<script type="text/javascript">
+		$("button").on("click", function(){
+			//Ajax 호출하기
+			
+			//1단계 - Ajax 통신을 위한 스크립트 객체 엉기(XMLHttpRequest)
+			var xhr = new XMLHttpRequest();
+			
+			//비동기 방식이기 때문에 서버의 응답결과를 처리할 수 있도록 결과 처리 콜백함수 등록
+			//결과받기
+			xhr.onreadystatechange = function(){
+				
+				
+				/* if(this.readyState == 4) console.log("Ajax 호출결과 : " +  xhr.responseText);	
+				else
+				{
+					console.log("Ajax 호출결과 : " + this.readyState);	
+					//처리중 이미지
+				} */
+				
+				if(this.readyState == 4) return;
+				
+				if(this.status == 200)
+				{
+					console.log("Ajax 호출결과 : " +  xhr.responseText);	
+					$("result").
+				} else 
+				{
+					console.log("페이지 에러");				
+				}
+				
+					
+				
+				
+			};
+			
+			//비동기 방식 서버 요청
+			//서버연결, open(요청방식, "요청페이지 URI", 동기-false/비동기-true)
+			xhr.open("GET", "hello.jsp", true);
+			
+			//서버와 전송하고 데이터 주고 받기
+			xhr.send();
+			
+		});
+
+	</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

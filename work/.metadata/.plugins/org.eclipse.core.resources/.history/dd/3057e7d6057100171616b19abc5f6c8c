@@ -1,0 +1,20 @@
+package basic;
+
+public class IfMain 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		String sss = "기본값";
+		if(true)
+		{
+			System.out.println("난 참이야");
+			sss = "참참참";
+		} else {
+			sss = "난 거짓이야";
+		}
+		System.out.println(sss);
+	}
+
+}

@@ -1,0 +1,58 @@
+<!-- 
+	DOM API
+	
+	<div>테스트<div>
+	
+	엘리먼트 생성하기 - 메모리에만 존재  화면에는 적용안됨
+	var ele = document.createElement("엘리먼트명");
+	
+	var div = document.createElement("div");
+	
+	텍스트 노드 생성하기
+	var txtNode = document.createTextNode("테스트");
+	
+	
+	테스트
+	var txtNode = document.createTextNode("테스트");
+	
+	특정 엘리먼트의 자식으로 추가
+	parent.appendChild(child);
+	
+	divEle.appendChild(txtNode);
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<button onclick="doAdd();">추가</button>
+	<div id="list"></div>
+
+	<script type="text/javascript">
+		var cnt = 0;
+		
+		function doAdd()
+		{
+			/* var div = document.createElement("div");
+			var txtNode = document.createTextNode("테스트");
+			div.appendChild(txtNode); */
+			
+			
+			var target = document.querySelector("#list");
+			var h1 = document.createElement("h1");
+			var txtNode = document.createTextNode("추가" + cnt);
+			
+			target.appendChild(h1);
+			h1.appendChild(txtNode);
+			
+			cnt++;
+			
+		}
+	
+	</script>
+</body>
+</html>

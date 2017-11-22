@@ -1,0 +1,11 @@
+package di.test08;
+
+public class Menu 
+{
+	private ISand sand;
+	
+	public Menu()
+	{
+		System.out.println("Menu 기본 생성자");
+	}
+}

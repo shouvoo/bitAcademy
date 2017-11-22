@@ -1,0 +1,6 @@
+package model;
+
+public class StudVO 
+{
+	String name, id, pw, email, content, hobby, gender;
+}

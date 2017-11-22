@@ -1,0 +1,32 @@
+<!-- 
+	setAttribute("이름", 값);
+	
+	el.setAttribute("width", 200);
+	el.setAttribute("height", 200);
+	
+	설정 : attr("이름", 값);
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<button >설정하기</button>
+	
+	<script type="text/javascript">
+	
+		//버튼찾아서 클릭이벤트 걸기
+		var btn = $("button")[0];
+		
+		btn.addEventListener("click", function(e) {
+			
+		});
+	
+	</script>
+</body>
+</html>

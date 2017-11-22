@@ -1,0 +1,105 @@
+<!-- 
+	
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<h1>Ajax 통신으로 서버에서 받은 데이터</h1>
+	<div id="result"></div>
+	<br>
+	<button>Ajax 호출</button>
+	
+	<script type="text/javascript">
+		$("button").on("click", function(){
+			
+			/* $.ajax({
+				type : "GET" or "POST",
+				url : "호출경로",
+				data : 파라미터 string or object,
+				dataType : 결과타입 처리(json, xml),
+				success : 함수(성공시 처리할 파트 부분),
+				error : 
+			}); */
+			
+			$.ajax({
+				type : "GET",
+				url : "hello.jsp",
+				success : function(data){ $("#result").html(data.responseText); },
+				error : function(){ console.log("페이지 에러");	}
+			});
+			
+		});
+
+	</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

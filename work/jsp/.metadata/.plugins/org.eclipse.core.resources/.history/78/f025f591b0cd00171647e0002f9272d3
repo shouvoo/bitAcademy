@@ -1,0 +1,9 @@
+package di.quiz;
+
+public class Animal 
+{
+	public void info()
+	{
+		System.out.println("성공");
+	}
+}

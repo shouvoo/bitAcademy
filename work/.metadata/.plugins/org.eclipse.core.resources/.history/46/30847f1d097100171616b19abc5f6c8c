@@ -1,0 +1,24 @@
+package basic;
+
+public class IfMain 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		int a = 87;
+		String sss = "±âº»°ª";
+		if(a > 90)
+		{
+			System.out.println("³­ ÂüÀÌ¾ß");
+			sss = "ÂüÂüÂü";
+		} 
+		if(a > 80) {
+			
+		} else {
+			sss = "»½»½»½";
+		}
+		System.out.println(sss);
+	}
+
+}

@@ -1,0 +1,9 @@
+package di.test08;
+
+public class Menu 
+{
+	public Menu()
+	{
+		System.out.println("Menu 기본 생성자");
+	}
+}

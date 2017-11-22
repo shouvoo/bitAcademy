@@ -1,0 +1,88 @@
+<!-- 
+	이벤트 전파
+	
+	이벤트가 발생한 객체의 부모중에서 동일한 이벤트 타입이 설정되어 있는경우
+	부모의 이벤트도 같이 실행됨
+	
+	이벤트 전파방식 : addEventListener(타입, 콜백, true(캡쳐링)/false 또는 없는 경우(버블링));
+	- 캡쳐링 : 부모에서 자식으로 전파
+	- 버블링 : 자식에서 부모로 전파
+	
+	이벤트 전파 막기
+	- 이벤트 객체.stopPropagation();
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	div
+	{
+		border: 3px solid black;
+		margin: 20px;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div id="outer">
+		<div id="inner">
+			<div id="child">이벤트 전파</div>
+		</div>
+	</div>
+	
+	
+	<div id="debug"></div>
+	
+	<script type="text/javascript">
+	
+		var outer = document.querySelector("#outer");
+		var inner = document.querySelector("#inner");
+		var child = document.querySelector("#child");
+		var d = document.querySelector("#debug");
+		
+		outer.addEventListener("click", function (e){ debug("outer") });
+		inner.addEventListener("click", function (e){ debug("inner") });
+		child.addEventListener("click", function (e){ debug("child");
+												//전파를 막기
+												e.stopPropagation()});
+		
+		function debug(msg)
+		{
+			d.innerHTML += msg + "<br>";
+		}
+	
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

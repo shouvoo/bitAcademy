@@ -1,0 +1,23 @@
+<!-- 
+	삭제하기
+	
+	parent.removeChild(child);
+	child.remove();
+	
+	
+	----------------------------------------------------------------------
+	child.remove();
+	
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

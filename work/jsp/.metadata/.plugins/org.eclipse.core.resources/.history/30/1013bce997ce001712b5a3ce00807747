@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.omp.repository.mapper.MembershipMapper">
+	<resultMap id="membershipMap" type="membership">
+		<result column="member_no" property="supportNo" />
+		<result column="contents" property="title" />
+		<result column="no" property="site" />
+		<result column="reg_date" property="site" />
+	</resultMap>
+
+	<insert id="insertMemberComment" parameterType="SupportLinkDomain">
+ 		insert into membership(
+			support_no, 
+			title, 
+			site 
+		) values ( 
+			membership_seq.nextval, 
+		    #{supportNo}, #{site}
+		)
+	</insert>
+	
+	<update id="modifyMemberComment" parameterType="board">
+	   update membership 
+	      set title = #{title}, 
+	          site = #{site}, 
+	    where support_no = #{supportNo}
+	</update>
+	
+	<delete id="deleteMemberComment" parameterType="int">
+		delete
+		  from membership
+	  	 where support_no = #{supportNo}
+	</delete>
+	
+	<select id="detailMemberComment" parameterType="int" resultMap="supportMap">
+		select * 
+		  from membership
+	  	 where support_no = #{supportNo}
+	</select>
+	
+	<select id="readMemberComment" resultMap="supportMap" parameterType="page">
+	  	select * 
+	  		from(select rownum rnum, a.*
+	  			from (select *
+	  				from membership
+	  			order by support_no desc)a)
+	  		where rnum between ? and ?
+	</select>
+	
+	<select id="totalMembershipComment" resultType="int">
+		select count(*) from membership
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

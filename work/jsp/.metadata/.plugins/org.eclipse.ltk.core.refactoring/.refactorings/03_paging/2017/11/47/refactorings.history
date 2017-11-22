@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;PageResult.java&apos; to &apos;mini2-home/src/main/java/com.omp.common&apos;&#x0D;&#x0A;- Original project: &apos;03_paging&apos;&#x0D;&#x0A;- Destination element: &apos;mini2-home/src/main/java/com.omp.common&apos;&#x0D;&#x0A;- Original element: &apos;common.PageResult.java&apos;" description="Copy compilation unit" destination="=mini2-home/src\/main\/java&lt;com.omp.common" element1="/src&lt;common{PageResult.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1511251617276" units="1" version="1.0"/>
+</session>

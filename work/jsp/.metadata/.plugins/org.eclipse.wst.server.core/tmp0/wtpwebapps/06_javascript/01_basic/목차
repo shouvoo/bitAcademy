@@ -1,0 +1,47 @@
+줄복사 - alt + shift 방향키 
+줄삭제 - ctrl + shift + k
+줄이동 : alt + 방향기
+
+test01.html - html 에서 자바스크립트 실행하기
+test02.html - html 에서 외부 스크립트 파일 호출하기
+test03.js - NodeJS 를 이용한 콘솔창 이용하기
+test04_1.js - 변수사용하기
+test04_2.js - use strict 사용하기
+test04_3.js - 변수 undefined
+test04_4.js - 호이스팅 실행단계
+test04_5.js - 호이스팅 퀴즈
+test04_6.js - 자바스크립트 변수형 6가지
+test04_7.js - 자바스크립트 변수형 출력
+test04_8.js - 자바스크립트 한개의 변수에 여러 타입 값을 대입
+test04_9.js - 변수의 사용범위!!
+test04_10.js - let타입 변수의 사용!!
+
+test05_1.js - 문자열 사용!!
+test05_3.js - 문자열 사용 사칙연산!!
+
+test06.js - 형변환!!
+
+test07.js - 형변환!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

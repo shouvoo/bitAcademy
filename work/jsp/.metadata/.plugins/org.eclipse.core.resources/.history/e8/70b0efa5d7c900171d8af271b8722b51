@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+</head>
+<body>
+	아이디 : <input type="text" name="id">
+	<h1></h1>
+</body>
+
+<script type="text/javascript">
+
+	$("input").keyup(function(){
+		$.ajax({
+			url : "test11_quiz",
+			dataType : "json",
+			success : (data) => 
+			{
+				var members = data; // ECMA 5버젼 이후 방식
+				var html = "";
+				
+				for(var i = 0; i < members.length; i++)
+				{
+					var m = members[i];
+					
+					if($(this).val() == m.id) 
+					{
+						$("h1").text("사용불가능")
+						break;
+					}else 
+					{
+						$("h1").text("사용가능") 
+					}
+					
+					//console.log(m.id)
+				}
+
+				
+			}
+		})
+	});
+
+</script>
+
+</html>

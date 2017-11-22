@@ -1,0 +1,81 @@
+<!--  
+
+	이벤트 이해하기 - 2(이벤트 설정 방식)
+	
+	----------------------------------------------
+	현재 권장하고 있는 표준 이벤트 설정방식
+	
+	- 객체.addEventListener("이벤트 타입", 콜백함수(이벤트 리스너), 전파방식(캡처링, 버블링));
+	
+	<button> </button>
+	btn.addEventListener("click", func, false); // default는 false
+	
+	function func()
+	{
+		
+	}
+	
+	//이벤트 삭제
+	btn.removeEventListener("click", func);
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="btn" onclick="console.log('0번')">클릭</button>
+	
+	
+	<script type="text/javascript">
+	
+		var btn = document.querySelector("#btn");
+		
+		btn.addEventListener("click", test);
+		btn.addEventListener("click", test2);
+		//btn.onclick = test3;
+		
+		function test(e)
+		{
+			//이벤트 콜백함수에서의 this 는 이벤트가 발생한 대상 객체임
+			console.log(this)
+			
+			this.removeEventListener("click", test);
+		} 
+		
+		function test2(e)
+		{
+			//이벤트 콜백함수에서의 this 는 이벤트가 발생한 대상 객체임
+			console.log(this)
+		}
+		
+		function test3(e)
+		{
+			//이벤트 콜백함수에서의 this 는 이벤트가 발생한 대상 객체임
+			console.log(this)
+		}
+
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

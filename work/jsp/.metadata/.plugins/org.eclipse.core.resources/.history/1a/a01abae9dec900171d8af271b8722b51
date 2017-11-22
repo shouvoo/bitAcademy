@@ -1,0 +1,10 @@
+package kr.co.mlec.ajax;
+
+public class Test12_quiz_VO 
+{
+	private var code;
+	private var name;
+	private var lev;
+	private var gCode;
+	
+}

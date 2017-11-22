@@ -1,0 +1,23 @@
+<!-- 
+	window.onload 대체기능
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(function()
+		{
+			$("#msg").html("test");	
+		})
+	</script>
+
+	<h1 id="msg"></h1>
+</body>
+</html>

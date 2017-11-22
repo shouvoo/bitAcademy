@@ -1,0 +1,14 @@
+package com.omp.repository.mapper;
+
+import java.util.List;
+
+import com.omp.repository.domain.BoardDomain;
+
+public interface BoardMapper 
+{
+	public void insertBoard(BoardDomain db) throws Exception;
+	public void deleteBoard(int boardNo) throws Exception;
+	public void modifyBoard(int boardNo) throws Exception;
+	public List<BoardDomain> readBoard() throws Exception;
+	public BoardDomain detailBoard(int boardNo) throws Exception;
+}

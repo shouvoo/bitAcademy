@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ajax.QuizMapper">
+	
+	<resultMap id="quizMap" type="test12quiz">
+		<result column="code" property="no" />
+		<result column="name" property="pass" />
+		<result column="lev" property="name" />
+		<result column="g_code" property="email" />
+		<result column="chk" property="chk" />
+	</resultMap>
+
+	<select id="codeRead" resultMap="quizMap" parameterType="string">
+		select from t_member  where code = #{code}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lotto.LottoMapper">
+
+	<insert id="insert" parameterType="lotto">
+ 		insert into tb_lotto(
+			no, 
+			name, 
+			lottonumbers
+		) values ( 
+			s_tb_lotto.nextval, 
+		    #{name}, #{lottoNumbers}
+		)
+	</insert>
+	
+	<resultMap id="quizMap" type="Test11_quiz_VO">
+		<result column="no" property="no" />
+		<result column="name" property="name" />
+		<result column="lottonumbers" property="lottoNumbers" />
+	</resultMap>
+
+	<select id="read" resultMap="lottoMap">
+		select * from tb_lotto
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

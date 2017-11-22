@@ -1,0 +1,17 @@
+package di.test03;
+
+public class TVFactory 
+{
+	public TV getBean(String name)
+	{
+		switch(name)
+		{
+			case "sony" :
+				return new SonyTV();
+			case "lg" :
+				return new LgTV();
+		}
+		
+		return null;
+	}
+}

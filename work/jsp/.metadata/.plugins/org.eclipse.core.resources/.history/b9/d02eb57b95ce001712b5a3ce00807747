@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.omp.repository.mapper.CurriculumMapper">
+	<resultMap id="curriculumMap" type="curriculum">
+		<result column="board_no" property="boardNo" />
+		<result column="write" property="write" />
+		<result column="title" property="title" />
+		<result column="contents" property="contents" />
+		<result column="reg_date" property="regDate" />
+		<result column="category_no" property="categoryNo" />
+		<result column="member_no" property="memberNo" />
+	</resultMap>
+
+	<insert id="insertCurriculum" parameterType="CurriculumDomain">
+ 		insert into board(
+			support_no, 
+			title, 
+			site 
+		) values ( 
+			board_seq.nextval, 
+		    #{supportNo}, #{site}
+		)
+	</insert>
+	
+	<update id="modifySupportLink" parameterType="board">
+	   update board 
+	      set title = #{title}, 
+	          site = #{site}, 
+	    where support_no = #{supportNo}
+	</update>
+	
+	<delete id="deleteSupportLink" parameterType="int">
+		delete
+		  from board
+	  	 where support_no = #{supportNo}
+	</delete>
+	
+	<select id="detailSupportLink" parameterType="int" resultMap="curriculumMap">
+		select * 
+		  from board
+	  	 where support_no = #{supportNo}
+	</select>
+	
+	<select id="readSupportLink" resultMap="supportMap" parameterType="page">
+	  	select * 
+	  		from(select rownum rnum, a.*
+	  			from (select *
+	  				from board
+	  			order by support_no desc)a)
+	  		where rnum between ? and ?
+	</select>
+	
+	<select id="totalSupportLink" resultType="int">
+		select count(*) from board
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

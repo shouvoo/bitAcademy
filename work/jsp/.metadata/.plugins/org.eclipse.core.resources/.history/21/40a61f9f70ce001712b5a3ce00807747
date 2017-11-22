@@ -1,0 +1,13 @@
+package kr.co.mlec.board;
+
+public class BoardServiceImpl implements BoardService
+{
+	public BoardServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void delete(int no) throws Exception 
+	{
+		dao.deleteBoard(no);
+	}	
+}

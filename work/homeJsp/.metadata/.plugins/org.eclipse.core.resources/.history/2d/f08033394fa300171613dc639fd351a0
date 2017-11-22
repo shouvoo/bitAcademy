@@ -1,0 +1,45 @@
+<%@page import="java.util.Arrays"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>
+	
+		<table border="1">
+			<tr>
+				<td>id</td>
+				<td><%=request.getParameter("id") %></td>
+			</tr>
+			<tr>
+				<td>pw</td>
+				<td><%=request.getParameter("pw") %></td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td><%=request.getParameter("gender") %><br></td>
+			</tr>	
+			<tr>
+				<td>취미</td>
+				<td><%=Arrays.toString(request.getParameterValues("hobby")) %><br></td>
+			</tr>	
+			<tr>
+				<td>파일</td>
+				<td><%=request.getParameter("upfile") %></td>
+			</tr>
+			
+			<tr>
+				<td>이메일</td>
+				<td><%=request.getParameter("email") %><br></td>
+			</tr>		
+		</table>
+	
+		<%-- id : <%=request.getParameter("id") %><br> 
+		pw : <%=request.getParameter("pw") %><br> 
+		성별 : <%=request.getParameter("gender") %><br>  --%>
+	</body>
+</html>

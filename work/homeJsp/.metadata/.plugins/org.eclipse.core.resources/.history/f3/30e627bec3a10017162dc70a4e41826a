@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>list</title>
+	</head>
+	
+	<body>
+		<ul type="square">
+			<li>지라시</li>
+			<li>초밥정식</li>
+			<li>규동</li>
+			<li>애비동</li>
+		</ul>
+		
+		<ol type="square">
+			<li>불백</li>
+			<li>우삼겹</li>
+			<li>계란</li>
+			<li>된장찌개</li>
+		</ol>
+	</body>
+</html>

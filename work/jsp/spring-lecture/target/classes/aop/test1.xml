@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!-- 핵심 기능 클래스 -->
+    <bean id="board" class="aop.test04.BoardController" />                       
+    <bean id="member" class="aop.test04.MemberController" />
+    
+    <!-- 공통 기능 클래스 -->
+	<bean id="log" class="aop.test04.LogAspect" />
+	<bean id="time" class="aop.test04.TimeAspect" />
+                   
+                 
+    <!-- <aop:config proxy-target-class="true"> -->          
+	<aop:config >
+	<!-- expression 위치 잡기
+	위치 : 패키지 클래스 반환타입 메서드 (파라미터) -->
+		<!-- <aop:pointcut id="pCut" expression="execution(* execute(..))" /> -->
+		<!-- <aop:pointcut id="pCut" expression="execution(public * aop.test04.*.execute(..))" /> -->
+		<!-- <aop:pointcut id="pCut" expression="execution(public * aop.test04..*.execute(..))" /> -->
+		<!--  Controller 타입인 클래스의 execute 만 사용하겠다 -->
+		<!-- <aop:pointcut id="pCut" expression="execution(public * aop.test04.Controller+.execute(..))" /> -->
+		
+		
+		<aop:pointcut id="pCut" expression="execution(public * aop.test04..*Controller.execute(..))" />
+		
+		<aop:aspect ref="log">
+			<aop:before method="showLog" pointcut-ref="pCut" />
+		</aop:aspect>
+		
+		<aop:aspect ref="time">
+			<aop:around method="exeTime" pointcut="execution(* execute(..))" />
+			<!-- <aop:around method="exeTime" pointcut-ref="pCut" /> -->
+		</aop:aspect>
+		
+	</aop:config>
+</beans>

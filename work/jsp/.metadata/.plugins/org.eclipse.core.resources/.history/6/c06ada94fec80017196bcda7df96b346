@@ -1,0 +1,32 @@
+<!-- 
+	이벤트 설정 기능 추가하기
+	기존 : el.addEventListener("이벤트타임", 콜백함수);
+	
+	
+	el.on("이벤트타임", 콜백함수);
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<button>버튼1</button>
+	<button>버튼2</button>
+
+
+	<script type="text/javascript">
+	
+	var $btn1 = $("button")[0];
+	
+	$btn.addEventListener("click", function(e) {
+				
+	});
+
+	</script>
+
+</body>
+</html>

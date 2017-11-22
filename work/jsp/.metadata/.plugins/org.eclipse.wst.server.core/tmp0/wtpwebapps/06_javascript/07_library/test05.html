@@ -1,0 +1,48 @@
+<!-- 
+	value 기능 추가하기
+	input, textarea, select - value
+	
+	el.value = "aaa";
+	alert(el.value);
+	
+	설정 : val("aaa");
+	추출 : val();	
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <script type="text/javascript" src="jquery.js"></script> -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+</head>
+<body>
+	<button>설정하기</button>
+	<button>추출하기</button>
+	
+
+	아이디 : <input type="text" name="id" size="20px">
+	
+	
+	<script type="text/javascript">
+		var $btn1 = $("button:nth-child(1)")[0];
+		var $btn2 = $("button:nth-child(2)")[0];
+		
+		$btn1.addEventListener("click", function(e) {
+			$("input[name='id']").val("설정")
+		})
+		
+		$btn2.addEventListener("click", function(e) {
+			alert($("input[name='id']").val());	
+		})
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+package aop.test04;
+
+public class TimeAspect 
+{
+	public void exeTime()
+	{
+		
+	}
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	div
+	{
+		position: absolute;
+		
+		width: 100px;
+		height: 100px;
+		background: tomato;
+		font-size: 30px;
+	}
+
+</style>
+
+</head>
+<body>
+	<div>이동</div>
+	
+	<script type="text/javascript">
+	
+		var dObj = document.querySelector("div");
+		document.addEventListener("mousemove", function(e) 
+		{
+			dObj.style.left = e.clientX + "px";
+			dObj.style.top = e.clientY + "px";
+		})
+	
+	</script>
+</body>
+</html>

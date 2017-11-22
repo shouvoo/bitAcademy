@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+
+<style type="text/css">
+	
+	.box1
+	{
+		border: 1px solid orange;
+		background-color: gray;
+		width: 200px;
+		height: 300px;
+		float: left;
+	}
+	
+	.box2
+	{
+		border: 10px solid orange;
+		width: 700px;
+		height: 100px;
+		margin-left: 300px;
+	}
+	
+</style>
+
+<script type="text/javascript">	
+	
+	
+	
+	function add(msg)
+	{
+		if(msg.checked == false) 
+		{
+			msg.checked = true;		
+			return;
+		} 
+		var box = document.querySelector("#box"); 
+		var span = document.createElement("span");
+		var checkBox = document.createElement("input");
+		checkBox.onclick = function()
+		{
+			msg.checked = false;
+			span.remove(checkBox);
+			
+		};
+		span.innerText = msg.value;
+		checkBox.type = "checkbox";
+		
+		span.appendChild(checkBox)
+		box.appendChild(span);
+		
+	}
+
+	
+</script>
+
+
+</head>
+<body>
+	
+	<div>
+	
+		<div class="box1">
+			<P><input type="checkbox" onchange="add(this)" value="JAVA"> JAVA</P>
+			<P><input type="checkbox" onchange="add(this)" value="SQL"> SQL</P>
+			<P><input type="checkbox" onchange="add(this)" value="HTML"> HTML</P>
+			<P><input type="checkbox" onchange="add(this)" value=" CSS"> CSS</P>
+			<P><input type="checkbox" onchange="add(this)" value=" JAVASCRIPT"> JAVASCRIPT</P>
+		</div>
+		
+		<div id="box" class="box2">
+		</div>
+		
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
