@@ -20,32 +20,32 @@
 		)
 	</insert>
 	
-	<update id="modifyMemberComment" parameterType="membership">
+	<update id="modifyMemberComment" parameterType="int">
 	   update membership 
 	      set contents = #{contents}
 	      where no = #{no}
 	</update>
 	
-	<delete id="deleteMemberComment" parameterType="membership">
+	<delete id="deleteMemberComment" parameterType="int">
 		delete
 		  from membership
 	  	 where no = #{no}
 	</delete>
 	
-	<select id="detailMemberComment" parameterType="membership" resultMap="supportMap">
+	<select id="detailMemberComment" parameterType="int" resultMap="membershipMap">
 		select * 
 		  from membership
 	  	 where no = #{no}
 	</select>
 	
-	<select id="readMemberComment" resultMap="supportMap" parameterType="membership">
+	<select id="readMemberComment" resultMap="membershipMap" parameterType="membership">
 	  	select * 
 	  		from(select rownum rnum, a.*
 	  			from (select *
 	  				from membership
 	  				where member_no = #{memberNo}
-	  			order by support_no desc)a)
-	  		where rnum between ? and ?
+	  			order by no desc)a)
+	  		where rnum between #{begin} and #{end}
 	</select>
 	
 	<select id="totalMembershipComment" resultType="int">

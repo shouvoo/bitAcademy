@@ -12,7 +12,7 @@
 		<result column="member_no" property="memberNo" />
 	</resultMap>
 
-	<insert id="insertCurriculum" parameterType="CurriculumDomain">
+	<insert id="insertCurriculum" parameterType="curriculum">
  		insert into board(
 			board_no, 
 			write, 
@@ -45,7 +45,7 @@
 	  	 where board_no = #{boardNo} and category_no = #{categoryNo}	 
 	</select>
 	
-	<select id="readCurriculum" resultMap="curriculumMap" parameterType="page">
+	<select id="readCurriculum" resultMap="curriculumMap" parameterType="curriculum">
 	  	select * 
 	  		from(select rownum rnum, a.*
 	  			from (select *
