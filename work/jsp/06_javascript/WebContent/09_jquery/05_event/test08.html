@@ -11,7 +11,19 @@
         <textarea cols="70"rows="5"></textarea>
     </div>
     <script>
-
+		$("textarea").keyup(function(){
+			var len = $(this).val().length;
+			$("#countSpan").text(len);
+			
+			if(len > 50)
+			{
+				$("#countSpan").css("color", "red");
+			} else 
+			{
+				$("#countSpan").css("color", "black");
+			
+			}
+		});
     </script>
 </body>
 </html>

@@ -44,7 +44,76 @@
     <div id="effDiv2"><h1>효과2</h1></div>
     <div id="effDiv3"><h1>효과3</h1></div>
     <script>
+    $("button:eq(0)").click(function(){
+		
+		
+		/* $("#effDiv3").slideToggle(500, function(){
+			$("#effDiv2").slideToggle(500, function(){
+				$("#effDiv1").slideToggle(500);
+			});
+		}); */
+		
+		$("#effDiv3").slideToggle(500, function outer(){
+			var div = $("this").prev();
+			if(div[0].nodeName == 'DIV')
+			{
+				div.slideToggle(500, outer);
+			}
+		});
+	});
+	
+	$("button:eq(1)").click(function(){
+		/* $("#effDiv1").slideToggle(500, function(){
+			$("#effDiv2").slideToggle(500, function(){
+				$("#effDiv3").slideToggle(500);
+			});
+		}); */
+		
+		var id = $("div:first").attr("id");
+		if($("div").is(":visible"))
+		{
+			id = $("div:last").attr("id");
+		}
+		
+		$("#" + id).slideToggle(500, function outer(){
+			var div;
+			if($("this").is(":visible"))
+			{
+				div = $("this").next();
+			} else {
+				div = $("this").prev();
+				
+			}
+			
+			if(div[0].nodeName = 'DIV')
+			{
+				div.slideToggle(500, outer);
+			}
+		});
+		
+	});
 
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

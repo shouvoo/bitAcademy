@@ -29,6 +29,17 @@
     <p>이벤트 연습</p>
     <script>
 
+    	$("button:eq(0)").click(function(){
+    		alert("클릭됨")
+    		$(this).off("click");
+    	});
+    	
+    	
+    	
+    	$("button:eq(1)").one("click", function(){
+    		alert("클릭됨")
+    	});
+    
      </script>
 </body>
 </html>

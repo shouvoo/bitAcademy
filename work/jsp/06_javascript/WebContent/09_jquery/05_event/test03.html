@@ -25,7 +25,12 @@
     <p>이벤트 <span>연습2</span></p>
     <div></div>
     <script>
-
+		$("p").click(function(){
+			//연습1 or 연습2
+			//alert($(this).find("span").text())
+			//alert($(this).children("span").text())
+			alert($("span", this).html())
+		});
     </script>
 </body>
 </html>

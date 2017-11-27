@@ -40,6 +40,24 @@
     <div></div>
     <script>
 
+    	$("p").click(function(){
+    		$("div").append("클릭됨<br>");
+    	}).mouseenter(function(){
+    			$("div").append("마우스 들어옴<br>")
+    		});
+    	
+    	$("button:eq(0)").click(function(){
+    		$("p").off("click");
+    	});
+    	$("button:eq(1)").click(function(){
+    		$("p").off("mouseenter");
+    		
+    	});
+
+    	$("button:eq(2)").click(function(){
+    		$("p").off();
+    	});
+    
      </script>
 </body>
 </html>

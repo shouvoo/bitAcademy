@@ -24,7 +24,11 @@
         <a href="http://www.naver.com">Naver 이동하기</a>
     </div>
     <script>
-
+		$(document).on("contextmenu", function(){
+			alert("클릭")
+			//e.preventDefault();
+			return false;
+		})
     </script>
 </body>
 </html>

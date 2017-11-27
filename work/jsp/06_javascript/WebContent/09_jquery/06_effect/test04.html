@@ -18,7 +18,62 @@
     <div></div><div></div>
     <div></div><div></div>
     <script>
-
+		/* $("div").click(function(){
+			$(this).animate({left: 300}, "slow");
+		}); */
+		
+		$("div").hover(
+				
+				function(){
+					//마우스가 over일때
+					$(this).animate({margin: 50, left: 500, opacity: 0.1}, "slow");
+				},
+				
+				function(){
+					//마우스가 out일때
+					$(this).animate({margin: 0, left: 0, opacity: 1}, "slow");
+				}
+				
+				/* function(){
+					//마우스가 over일때
+					$(this).animate({width: 500}, "slow");
+				},
+				
+				function(){
+					//마우스가 out일때
+					$(this).animate({width: 50}, "slow");
+				} */
+				
+				/* function(){
+					//마우스가 over일때
+					$(this).animate({left: 500}, "slow");
+				},
+				
+				function(){
+					//마우스가 out일때
+					$(this).animate({left: 0}, "slow");
+				} */
+				
+				/* function(){
+					//마우스가 over일때
+					$(this).animate({opacity: 0.1}, "slow");
+				},
+				
+				function(){
+					//마우스가 out일때
+					$(this).animate({opacity: 1}, "slow");
+				} */
+				/* function(){
+					//마우스가 over일때
+					$(this).animate({margin: 50}, "slow");
+				},
+				
+				function(){
+					//마우스가 out일때
+					$(this).animate({margin: 0}, "slow");
+				} */
+		);
+		
     </script>
 </body>
 </html>
