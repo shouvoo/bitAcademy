@@ -23,6 +23,26 @@
 	<button>호출</button>
 	<div id="result"></div>
 	<script>
+		$("button").click(function(){
+			$.ajax({
+				url: "/06_javascript/jquary/ajax/test01",
+				type: "GET",
+				data: "msg=" + $("#msg").val(),
+				/* headers: {}, */ // 헤더가 필요할때 사용한다 외부 라이브러리 사용시 필요함!
+				beforeSend: function(){
+					var msg = $("#msg").val();
+					if(!msg)
+					{
+						alert("값을 입력하세요!")
+						$("#msg").focus();
+						return false;
+					}
+				}
+			})
+			.done(function(data){
+				$("#result").html(data);
+			});
+		})
 	</script>
 </body>
 </html>

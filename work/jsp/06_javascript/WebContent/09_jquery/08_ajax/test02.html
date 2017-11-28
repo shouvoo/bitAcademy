@@ -16,6 +16,31 @@
 	<button>요청</button>
 	<div id="result"></div>
 	<script>
+	$("button").click(function(){
+		
+		$.getJSON(
+			"/06_javascript/jquary/ajax/test02",
+			function(data)
+			{
+				$("#result").text(data.result);
+			}
+		)
+		
+		/* $("#result").load("/06_javascript/jquary/ajax/test01"); */ // 단순 데이터를 가져와 html 로 쁘려줄때 사용
+		/* $.get("/06_javascript/jquary/ajax/test02",
+			{msg : "hello!!"},
+			
+			function(data){
+				$("#result").html(data);
+		}); */
+		
+		/* $.post("/06_javascript/jquary/ajax/test02",
+			{msg : "hello!!"},
+			
+			function(data){
+				$("#result").html(data);
+		}); */
+	})
 	</script>
 </body>
 </html>

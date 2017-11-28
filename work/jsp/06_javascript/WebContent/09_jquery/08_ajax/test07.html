@@ -9,11 +9,24 @@
 <link rel="stylesheet" href="waitme/waitMe.css">
 <script src="../js/jquery-3.2.1.js"></script>
 <script src="waitme/waitMe.js"></script>
+<script src="common.js"></script>
 </head>
 <body>
 	<button>호출</button>
 	<div id="result"></div>
 	<script>
+		$("button").click(function(){
+			//test02 ajax 실행
+			$.ajax({
+				url : "/06_javascript/jquary/ajax/test02",
+				success : function(data)
+				{
+					$("#result").append(data);
+				}
+					
+			});
+
+		})
 	</script>
 </body>
 </html>

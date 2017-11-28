@@ -1,6 +1,9 @@
 <!-- 
 	$.ajax(url, options);
 	$.ajax(options);
+	
+	//Ajax의 다중 호출시 사용
+	$.when()
  -->
 <!DOCTYPE html>
 <html>
@@ -13,6 +16,18 @@
 	<button>호출</button>
 	<div id="result"></div>
 	<script>
+		$("button").click(function(){
+			var $ajax1 = $.ajax("/06_javascript/jquary/ajax/test01");
+			var $ajax2 = $.ajax("/06_javascript/jquary/ajax/test02");
+			
+			//위의 2개의 ajax 실행이 종료된 다음 작업처리
+			$.when($ajax1, $ajax2).done(function(result1, result2){
+				/* $("result").html(result1);
+				$("result").html(result2); */
+				console.dir(result1);
+				console.dir(result2);
+			});
+		})
 	</script>
 </body>
 </html>
