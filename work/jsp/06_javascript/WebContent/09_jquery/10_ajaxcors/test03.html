@@ -16,6 +16,14 @@
 	<button>요청</button>
 	<div id="result"></div>
 	<script>
+		$("button").click(function(){
+			$.ajax({
+				url: "http://localhost:9080/lec06_apiserver/crossdomain/test03"
+			})
+			.done(function(data){
+				$("#result").html(data);
+			});
+		})
 	</script>
 </body>
 </html>

@@ -15,7 +15,18 @@
 	<button>요청</button>
 	<div id="result"></div>
 	<script>
+		function test(msg)
+		{
+			$("#result").html(msg);
+		}
+		
+		$("button").click(function(){	
+			$(document.body).append(
+					'<script src="http://localhost:9080/lec06_apiserver/crossdomain/test04?callback=test">$lt;/script>');
+		})
+		
 	</script>
+	
 </body>
 </html>
 
