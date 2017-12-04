@@ -10,20 +10,33 @@
 		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
 	</section>
 	<section name="TextSearchPage">
-		<item value="6" key="HISTORY_SIZE"/>
+		<item value="7" key="HISTORY_SIZE"/>
 		<item value="false" key="CASE_SENSITIVE"/>
 		<item value="false" key="REG_EX_SEARCH"/>
 		<item value="false" key="WHOLE_WORD"/>
 		<item value="false" key="SEARCH_DERIVED"/>
 		<item value="false" key="SEARCH_IN_BINARIES"/>
-		<section name="HISTORY4">
+		<section name="HISTORY6">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="Inc" key="textPattern"/>
+			<item value="menuUrl" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY4">
+			<item value="true" key="ignoreCase"/>
+			<item value="1" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="/day05" key="textPattern"/>
+			<item value="false" key="isRegExSearch"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+				<item value="*.jsp"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -32,7 +45,7 @@
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="menuUrl" key="textPattern"/>
+			<item value="Inc" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -49,7 +62,7 @@
 			<item value="true" key="ignoreCase"/>
 			<item value="1" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="&quot;/lec01_servletjsp" key="textPattern"/>
+			<item value="C:/lee" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*.java"/>
@@ -61,11 +74,10 @@
 			<item value="true" key="ignoreCase"/>
 			<item value="1" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="/day05" key="textPattern"/>
+			<item value="&quot;/lec01_servletjsp" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*.java"/>
-				<item value="*.jsp"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -74,7 +86,7 @@
 			<item value="true" key="ignoreCase"/>
 			<item value="1" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="lee" key="textPattern"/>
+			<item value="main.do" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*.java"/>
@@ -86,7 +98,7 @@
 			<item value="true" key="ignoreCase"/>
 			<item value="1" key="scope"/>
 			<item value="false" key="isWholeWord"/>
-			<item value="C:/lee" key="textPattern"/>
+			<item value="lee" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*.java"/>

@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+
+$(document).ajaxStart(function(){
+				console.log("ajax start");
+			})
+			
+			$(document).ajaxStop(function(){
+				console.log("ajax stop");
+			})
+			
+			$(document).ajaxSend(function(){
+				console.log("ajax send");
+			})

@@ -1,0 +1,35 @@
+<!-- 
+window.onload 기능 대체
+$(document).ready(function)
+단축된 표현 $(function)
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script>
+    
+	    window.onload = function() {
+			console.log($("h1").html());	
+		};
+    
+    	$(document).ready(function() {
+    		console.log("document ready", $("h1").html());	
+    	})
+    	
+    	$(function() {
+    		console.log("$ 단축", $("h1").html());	
+    		
+    	})
+        
+    </script>
+</head>
+
+<body>
+    <h1>jQuery 문서 로딩 후 실행</h1>
+</body>
+
+</html>

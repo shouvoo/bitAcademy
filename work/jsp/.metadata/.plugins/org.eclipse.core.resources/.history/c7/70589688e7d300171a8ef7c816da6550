@@ -1,0 +1,38 @@
+package jquery.ajaxfile;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+@WebServlet("/jquery/ajaxfile/test01")
+public class Test01  extends HttpServlet
+{
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		response.setContentType("text/html; charset=utf-8");
+		
+		MultipartRequest mRequest = new MultipartRequest(request, 
+				"C:\\!SHOU\\work\\jsp\\06_javascript\\WebContent\\upload",
+				1024 * 1024 * 100,
+				"utf-8",
+				new DefaultFileRenamePolicy());
+		
+		
+		
+		String orgFileName = mRequest.getOriginalFileName("attachFile");
+		String systemFileName = mRequest.getFilesystemName("attachFile");
+		
+		System.out.println("사용자 선택 파일명: " + orgFileName);
+		System.out.println("서버 저장 파일명: " + orgFileName);
+	}
+
+}

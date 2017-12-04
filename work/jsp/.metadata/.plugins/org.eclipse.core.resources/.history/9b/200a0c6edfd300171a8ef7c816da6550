@@ -1,0 +1,53 @@
+<!-- 
+	전역  Ajax 함수
+	ajaxStart
+	ajaxStop
+	
+	ajaxSend
+	ajaxSuccess
+	ajaxComplete
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.2.1.js"></script>
+</head>
+<body>
+	<button>호출</button>
+	<div id="result"></div>
+	<script>
+		$("button").click(function(){
+			
+			$(document).ajaxStart(function(){
+				
+			})
+			
+			$(document).ajaxStop(function(){
+				
+			})
+			
+			$.ajax({
+				url : "/06_javascript/jquary/ajax/test01",
+				success : function(data)
+				{
+					$("#result").append(data);
+					console.log("done - test01")
+				}
+					
+			});
+					
+			$.ajax({
+				url : "/06_javascript/jquary/ajax/test02",
+				success : function(data)
+				{
+					$("#result").append(data);
+					console.log("done - test02")
+				}
+			});	
+		})
+		
+	</script>
+</body>
+</html>

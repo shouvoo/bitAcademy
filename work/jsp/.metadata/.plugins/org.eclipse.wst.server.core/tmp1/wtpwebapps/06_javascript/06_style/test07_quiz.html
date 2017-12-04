@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	#container
+	{
+		position: absolute;
+		
+	}
+	
+	#container #slide
+	{
+		position: absolute;
+		border: 1px solid;
+		background-color: gray;
+		width: 500px;
+		height: 500px;
+		margin-left: 200px;
+		top: -600px;
+	}
+	
+
+</style>
+
+</head>
+<body>
+	<p>
+		<a href="#" id="link">이전 슬라이드</a>
+		<a href="#" id="link">다음 슬라이드</a>
+	</p>
+	
+	<div id="container">
+		<div id="slide" value="0">슬라이드1번</div>
+		<div id="slide" value="1">슬라이드2번</div>
+		<div id="slide" value="2">슬라이드3번</div>
+		<div id="slide" value="3">슬라이드4번</div>
+		<div id="slide" value="4">슬라이드5번</div>
+	</div>
+	
+	
+	<script type="text/javascript">
+	
+	var cnt = -1;
+	var moveCnt = 0;
+	var intervalId = [];
+	var currentObj = null;
+	var aObj = document.querySelectorAll("p a");
+	var divObj = document.querySelectorAll("div #slide");
+	
+	
+	
+	for(var i = 0; i < aObj.length; i++)
+	{
+		var btn = aObj[i];
+		btn.val = i;
+		btn.addEventListener("click", fun);
+	}
+	
+	for(var i = 0; i < divObj.length; i++)
+	{
+		var div = divObj[i];
+		div.val = i;
+	}
+	
+	
+	
+	function fun(e)
+	{
+		var target = e.target;
+		var id = target.val;
+		
+		if(id == 0) cnt--;
+		else cnt++;
+		
+		if(cnt > 4)
+		{
+			cnt = 4;
+			return;
+		}
+
+		if(cnt < -1)
+		{
+			cnt = 0;
+			return;
+		}
+		
+		currentObj = divObj[cnt];
+		moveCnt = currentObj.style.top;
+		intervalId[cnt] = setInterval(move, 10);
+		
+	}
+	
+	function move(obj)
+	{
+		moveCnt--;
+		
+		var y = parseInt(document.defaultView.getComputedStyle(currentObj).getPropertyValue("top")); 
+	
+		if(y < 0) 
+		{
+			currentObj.style.top = (y - moveCnt) + "px";
+		} else 
+		{
+			clearInterval(intervalId[currentObj.val]);
+		}
+		//console.log(intervalId[0], currentObj.val + 1);
+		
+		
+		
+		//console.log(moveCnt);
+		//obj.style.top = moveCnt + "px";
+		
+		
+		/* cnt++;
+		divObj.style.height = (cnt * 2) + "px";
+		
+		if(divObj.style.height == "100px" || divObj.style.height == "0px") clearInterval(intervalId); */
+	}
+	
+	
+		
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

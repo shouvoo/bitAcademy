@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.2.1.js"></script>
+<script src="../js/jquery.form.js"></script> 
+</head>
+<body>
+///06_javascript/jquary/ajax/test02
+	<form id="ajaxForm" action="/jquery/ajaxfile/test01"
+	      method="post"
+	      enctype="multipart/form-data">
+		<input type="text" name="msg" /><br>
+		<input type="file" name="attachFile" />
+		<button>업로드</button>	      
+	</form>
+	<script>
+		$("#ajaxForm").ajaxForm({
+			beforeSubmit: function(){
+				alert("서브밋 전 호출");
+			},
+			sucess: function(responseText){
+				
+				alert("업로드 성공");
+			},
+			error: function(){
+				alert("업로드시 에러발생");
+				
+			}
+		});
+	
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

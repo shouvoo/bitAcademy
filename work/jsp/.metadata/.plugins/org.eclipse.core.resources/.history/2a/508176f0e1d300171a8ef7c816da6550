@@ -1,0 +1,72 @@
+<!-- 
+	http://www.jqueryscript.net/loading/jQuery-Plugin-For-Creating-Loading-Overlay-with-CSS3-Animations-waitMe.html
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="waitme/waitMe.css">
+<script src="../js/jquery-3.2.1.js"></script>
+<script src="waitme/waitMe.js"></script>
+</head>
+<body>
+	<button>호출</button>
+	<div id="result"></div>
+	<script>
+		function waitEffect()
+		{
+			$('body').waitMe({
+				//none, rotateplane, stretch, orbit, roundBounce, win8,
+				//win8_linear, ios, facebook, rotation, timer, pulse,
+				//progressBar, bouncePulse or img
+				effect: 'bouncePulse',
+				//place text under the effect (string).
+				text: '처리중입니다',
+
+				//background for container (string).
+				bg: 'rgba(255,255,255,0.7)',
+
+				//color for background animation and text (string).
+				color: '#000',
+
+				//max size
+				maxSize: '',
+
+				//wait time im ms to close
+				waitTime: -1,
+
+				//url to image
+				source: '',
+
+				//or 'horizontal'
+				textPos: 'vertical',
+
+				//font size
+				fontSize: '',
+
+			});
+			
+			
+			
+			setTimeout(function(){
+				$("body").waitMe("hide");
+			}, 2000)
+		}
+	
+	
+		$("button").click(function(){
+			//test02 ajax 실행
+			waitEffect();
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

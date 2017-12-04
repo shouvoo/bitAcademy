@@ -1,0 +1,33 @@
+<!-- 
+	$.ajax(url, options);
+	$.ajax(options);
+	
+	//Ajax의 다중 호출시 사용
+	$.when()
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.2.1.js"></script>
+</head>
+<body>
+	<button>호출</button>
+	<div id="result"></div>
+	<script>
+		$("button").click(function(){
+			$.ajax("/06_javascript/jquary/ajax/test01");
+			$.ajax("/06_javascript/jquary/ajax/test02");
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

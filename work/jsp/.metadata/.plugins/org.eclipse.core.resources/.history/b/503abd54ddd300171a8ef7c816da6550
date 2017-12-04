@@ -1,0 +1,36 @@
+<!-- 
+	$.ajax(url, options);
+	$.ajax(options);
+	
+	//Ajax의 다중 호출시 사용
+	$.when()
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.2.1.js"></script>
+</head>
+<body>
+	<button>호출</button>
+	<div id="result"></div>
+	<script>
+		$("button").click(function(){
+			var $ajax1 = $.ajax("/06_javascript/jquary/ajax/test01");
+			var $ajax2 = $.ajax("/06_javascript/jquary/ajax/test02");
+			
+			//위의 2개의 ajax 실행이 종료된 다음 작업처리
+			$.when($ajax1, $ajax2).done();
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

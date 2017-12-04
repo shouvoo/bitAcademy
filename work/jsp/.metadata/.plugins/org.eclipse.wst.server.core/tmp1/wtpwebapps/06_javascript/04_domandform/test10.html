@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" value="추가" onclick="addTd();">
+	<input type="button" value="삭제" onclick="delTd();">
+	
+	<table>
+		<tr class="trObj">
+			<td><input type="text" size="10"></td>
+		</tr>
+		<tr class="trObj">
+			<td><input type="text" size="10"></td>
+		</tr>
+	</table>
+	
+	<script type="text/javascript">
+	
+		function addTd()
+		{
+			var trObj = document.querySelectorAll(".trObj");
+			
+
+			for(var i = 0; i<trObj.length; i++)
+			{
+				var tdObj = document.createElement("td");
+				var inputObj = document.createElement("input");
+				inputObj.size = 10;
+				inputObj.type = "text";
+				trObj[i].appendChild(tdObj).appendChild(inputObj);
+			}
+		}
+		
+		function delTd()
+		{
+			
+		}
+	
+	</script>
+</body>
+</html>

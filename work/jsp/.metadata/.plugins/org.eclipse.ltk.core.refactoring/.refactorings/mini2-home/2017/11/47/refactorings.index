@@ -9,3 +9,23 @@
 1511252168085	Rename type 'PageDomain'
 1511252393990	Copy file
 1511253541545	Copy file
+1511332746496	Delete element
+1511332770846	Delete element
+1511333276061	Rename resource 'link.jsp'
+1511406366916	Rename type 'AttendanceDomain'
+1511406371689	Rename type 'CurriculumDomain'
+1511406376860	Rename type 'LikeHateDomain'
+1511406382137	Rename type 'MembershipDomain'
+1511406387175	Rename type 'SupportLinkDomain'
+1511406669286	Move folder
+1511406802724	Copy file
+1511407134911	Delete element
+1511407137687	Rename resource 'spring-mvc.xml'
+1511408117651	Rename type 'MemberService'
+1511408128829	Rename type 'MemberServiceImpl'
+1511419222269	Rename resource 'supportLink.jsp'
+1511421204922	Delete element
+1511483478909	Rename package 'com.omp.service'
+1511500876677	Move 'css' to 'WEB-INF'
+1511500974279	Move 'css' to 'webapp'
+1511502273909	Rename resource 'supportCss.css'

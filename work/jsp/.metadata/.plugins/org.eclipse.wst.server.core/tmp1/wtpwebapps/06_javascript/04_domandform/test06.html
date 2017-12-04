@@ -1,0 +1,33 @@
+<!-- 
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAction();">확인</button>
+	<div id="result" data-count="1"></div>
+	
+	<script type="text/javascript">
+	
+		function doAction()
+		{
+			var resultObj = document.querySelector("#result");
+			console.log(resultObj.id);
+			console.log(resultObj["id"]);
+			console.log(resultObj.getAttribute("id"));
+			
+			
+			//console.log(resultObj.id); // error
+			//console.log(resultObj["data-count"]); //undefined
+			//사용자 정의 속성은 getAttribute 를 사용해 가져와야 한다
+			console.log(resultObj.getAttribute("data-count"));
+		}
+	
+	</script>
+</body>
+</html>

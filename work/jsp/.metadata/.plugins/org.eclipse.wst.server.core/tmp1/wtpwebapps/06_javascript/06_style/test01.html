@@ -1,0 +1,47 @@
+<!-- 
+	자바스크립트를 이용한 css
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>CSS 적용하기</h1>
+	
+	<script type="text/javascript">
+	
+		var h1Obj = document.querySelector("h1");
+		
+		h1Obj.addEventListener("click", function (e) {
+			/* this.style.border = "5px solid black";
+			this.style.color = "tomato";
+			this.style.background = "#334455";
+			this.style.padding = "30px";
+			this.style.margin = "30px";
+			this.style.height = "100px";
+			this.style.borderRadius = "30px";
+			this.style.textAlign = "center";
+			this.style.lineHeight = "100px"; */
+			
+			
+			this.style["font-size"] = "90px"; 
+			this.style["border"] = "5px solid black";
+			this.style["color"] = "tomato";
+			this.style["background"] = "#334455";
+			this.style["padding"] = "30px";
+			this.style["margin"] = "30px";
+			this.style["height"] = "100px";
+			this.style["borderRadius"] = "30px";
+			this.style["textAlign"] = "center";
+			this.style["lineHeight"] = "100px";
+			
+			
+		})
+	
+	</script>
+</body>
+</html>

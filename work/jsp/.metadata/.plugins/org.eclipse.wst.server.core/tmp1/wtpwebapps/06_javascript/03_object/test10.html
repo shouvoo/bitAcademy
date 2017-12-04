@@ -1,0 +1,35 @@
+<!-- 
+	객체이해하기 - 10
+	
+	prototype 자체를 새로운 객체로 변경이 가능하다
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+		"use strict"
+		
+		function Member(id, name)
+		{
+			this.id = id;
+			this.name = name;
+		}
+		
+		Member.prototype = {setId: (id) => {this.id = id;}, getId: () => {return this.id;}, 
+							setName: (name) => {this.name = name;}, getName: () => {return name;}}
+		
+		
+		Member.prototype.constructor = Member;
+	
+	</script>
+
+</body>
+</html>

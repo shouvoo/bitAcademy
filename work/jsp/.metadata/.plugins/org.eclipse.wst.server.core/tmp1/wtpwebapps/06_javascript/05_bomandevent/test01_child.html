@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자식 페이지</h1>
+	메시지 : <input type="text" id="msg" />
+	<button onclick="winClose();">닫기</button>
+	
+	<script type="text/javascript">
+	
+		function winClose()
+		{
+			var msg = document.querySelector("#msg").value;
+			
+			//부모의 함수 찾아가기
+			opener.doResult(msg);
+			
+			
+			//현재창을 닫기
+			self.close();
+		}
+	
+	</script>
+</body>
+</html>

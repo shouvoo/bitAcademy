@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<style type="text/css">
+	canvas
+	{
+		position: relative;
+		top: 100px;
+		left: 100px;
+	}
+
+</style>
+</head>
+<body>
+    <canvas id="myCanvas" width="700" height="400" style="border: 3px solid black">
+    	
+    </canvas>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

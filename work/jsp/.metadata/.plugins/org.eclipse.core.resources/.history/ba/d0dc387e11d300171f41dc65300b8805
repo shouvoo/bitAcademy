@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<style type="text/css">
+	/*
+		선(line), 사각형(Rect), 호(Arc), 글자(Text), 이미지(Image)
+	*/
+	canvas
+	{
+		position: relative;
+		top: 100px;
+		left: 100px;
+	}
+
+</style>
+</head>
+<body>
+    <canvas id="myCanvas" width="700" height="400" style="border: 3px solid black">
+    	
+    </canvas>
+    
+    <script type="text/javascript">
+    	//그림 그리기 - canvas 에 그림을 그리기 위해서 context 객체를 얻고 그 위에 그린다
+    	var canvas = document.querySelector("#myCanvas");
+    	var context = canvas.getContext("2d");
+    	
+    	var isPress = false;
+    	
+    	$(canvas).on(function(){
+    		mousedown: function(event){
+    			isPress = true;
+    			//패스 시작
+    			context.beginPath();
+    			//시작점으로 이동
+    			context.moveTo(event.offsetX, event.offsetY);
+    		}
+    	
+	    	mouseup: function(event){
+    			isPress = false;
+			}
+    		
+			mousemove: function(event){
+    			if(isPress)
+   				{
+    				//다음점의 좌표
+   					context.lineTo(event.offsetX, event.offsetY)
+   				}
+    		}
+    	})
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

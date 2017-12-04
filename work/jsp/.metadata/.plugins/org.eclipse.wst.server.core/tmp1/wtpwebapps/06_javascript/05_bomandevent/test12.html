@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	p
+	{
+		font-size: 20px;
+		font-weight: bold;
+		height: 40px;
+		background: tomato;
+		color: white;
+		text-align: center;
+		line-height: 40px;
+	}
+	
+	#debug
+	{
+		height: 500px;
+		background: yellow;
+		font-size: 15px;
+		overflow: auto;
+	}
+
+</style>
+
+</head>
+<body>
+	<p>마우스 이벤트</p>
+	<div id="debug"></div>
+	
+	<script type="text/javascript">
+	
+		var pObj = document.querySelector("p");
+		var d = document.querySelector("#debug");
+		
+		pObj.addEventListener("mouseenter", function(e) {debug("마우스들어감")});
+		pObj.addEventListener("mouseleave", function(e) {debug("마우스나감")});
+		pObj.addEventListener("mousedown", function(e) {debug("마우스눌렀음")});
+		pObj.addEventListener("mouseup", function(e) {debug("마우스 올라감")});
+		pObj.addEventListener("mousemove", function(e) { 
+			var obj = e.target;
+			var left = obj.offsetLeft;
+			var top = obj.offsetTop;
+			var x = e.offsetX;
+			var y = e.offsetY;
+			
+			debug(`left: ${left}, top: ${top}, x:${x}, y:${y}`)
+		});
+		
+		function debug(msg)
+		{
+			d.innerHTML = msg + "<br>" + d.innerHTML;
+		}
+	
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

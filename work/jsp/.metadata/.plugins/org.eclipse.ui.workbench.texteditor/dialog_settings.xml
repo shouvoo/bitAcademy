@@ -4,31 +4,51 @@
 		<item value="554" key="DIALOG_X_ORIGIN"/>
 		<item value="326" key="DIALOG_Y_ORIGIN"/>
 	</section>
+	<section name=" org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="modifyId ="/>
+			<item value="modifyId"/>
+			<item value="controlPopup"/>
+			<item value="writeType"/>
+			<item value="setBackLayerControl"/>
+			<item value="$(&quot;.backLayer&quot;).css(&quot;display&quot;"/>
+			<item value="callAjax"/>
+			<item value="fieldEmpty"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="membership" key="selection"/>
+		<item value="button" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="support_link"/>
-			<item value="support"/>
-			<item value="10"/>
-			<item value="BoardDomain"/>
-			<item value="dao"/>
-			<item value="sandList"/>
-			<item value="name=&quot;name&quot;"/>
-			<item value="preventDefault"/>
-			<item value="sm"/>
-			<item value="buttons"/>
-			<item value="checkform"/>
-			<item value="console"/>
-			<item value="console.log"/>
-			<item value="new Date"/>
-			<item value="to_day"/>
+			<item value="button"/>
+			<item value="submitButton"/>
+			<item value="$(&quot;#baseContainer&quot;).width()"/>
+			<item value="writeButtonControll"/>
+			<item value="&quot;"/>
+			<item value="containerH"/>
+			<item value="boardNo"/>
+			<item value="memberNo"/>
+			<item value="writer"/>
+			<item value="console.log("/>
+			<item value="TweenMax.to"/>
+			<item value="tippy"/>
+			<item value="dataList"/>
+			<item value="off_day"/>
+			<item value="&apos;"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
+			<item value="memberList"/>
+			<item value="&quot;"/>
 			<item value="membership"/>
 			<item value="board"/>
 			<item value="(e) =&gt; "/>
@@ -38,12 +58,9 @@
 			<item value="th"/>
 			<item value="upload"/>
 			<item value="commentBoard"/>
-			<item value=""/>
 			<item value=";"/>
 			<item value="h5"/>
 			<item value="FreeBoardDAO"/>
-			<item value="\&quot;"/>
-			<item value="data"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

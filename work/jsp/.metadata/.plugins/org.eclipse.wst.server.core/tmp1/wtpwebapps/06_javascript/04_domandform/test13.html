@@ -1,0 +1,52 @@
+<!--
+	 select 객체 이해하기
+	 
+	 select box 의 선택된 항목의 인덱스 위치
+	 - select객체.selectedIndex
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="mForm">
+		<select name="searchType" >
+			<option>선택하세요</option>
+			<option value="writer">글쓴이</option>
+			<option value="title">제목</option>
+		</select>
+		
+		<input type="text" name="searchWord">
+		<button type="button" onclick="doSearch();">확인</button>
+		
+		<button type="button" onclick="changeDisabled(false)">활성화</button>
+		<button type="button" onclick="changeDisabled(true)">비활성화</button>
+	</form>
+	
+	<script type="text/javascript">
+		function changeDisabled(val)
+		{
+			var frm = document.mForm;
+			if(val) frm.searchType.selectedIndex = 0;
+			frm.searchType.disabled = val;
+		}
+	
+	
+		function doSearch()
+		{
+			//검색버튼이 눌렸을때 searchType의 select box 가 글쓴이 또는 제목을 선택했는지 알고싶다
+			var frm = document.mForm;
+			if(frm.searchType.selectedIndex == 0)
+			{
+				alert("검색항목을 선택하세요");
+				return false;
+			}
+			alert("검색");
+		
+		}
+	</script>
+</body>
+</html>

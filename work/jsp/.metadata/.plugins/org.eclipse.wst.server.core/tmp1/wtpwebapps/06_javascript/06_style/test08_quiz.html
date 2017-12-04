@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	img
+	{
+		position: absolute;
+		width: 100px;
+		height: 70px;
+	}
+
+</style>
+
+
+</head>
+<body>
+	<img id="img" src="images/pic1.jpg">
+	<img id="img" src="images/pic2.jpg">
+	
+	
+	<script type="text/javascript">
+	
+		var imgObj = document.querySelectorAll("img");
+		var currentObj = null;
+		
+		
+		for(var i = 0; i < imgObj.length; i++)
+		{
+			var img = imgObj[i];
+			img.addEventListener("mousedown", downhandler);
+		}
+		
+		function downhandler(e)
+		{
+			var target = e.target;
+			currentObj = target;
+			console.log(target)
+			document.addEventListener("mousemove", movehandler);
+		}
+		
+		function movehandler(e)
+		{
+			target.style.left = e.clientX + "px";
+			target.style.top = e.clientY + "px";
+		}
+	
+	</script>
+</body>
+</html>

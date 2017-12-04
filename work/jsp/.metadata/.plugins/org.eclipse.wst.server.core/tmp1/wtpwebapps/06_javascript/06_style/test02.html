@@ -1,0 +1,46 @@
+<!-- 
+	적용된 스타일 조회하기
+	
+	객체.style.css 프로퍼티명 형식의 조회는 inline 형식으로 적용된 것만 가능
+	
+	기본 설정된 정보를 조회해야 할 경우
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	div
+	{
+		background-color: #445566;
+	}
+
+</style>
+
+</head>
+<body>
+	<div style="width: 200px; height: 200px;">
+		<p>DIV</p>
+	</div>
+	
+	<script type="text/javascript">
+	
+		var dObj = document.querySelector("div");
+
+		console.dir(document.defaultView.getComputedStyle(dObj));
+		
+		var backVal = document.defaultView.getComputedStyle(dObj).getPropertyValue("background-color");
+		
+		console.log("width", dObj.style.width);
+		console.log("height", dObj.style.height);
+		console.log("backgroundColor", dObj.style.backgroundColor);
+		console.log("backgroundColor", dObj.style["backgroundColor"]);
+		console.log("backVal", backVal);
+	
+	</script>
+</body>
+</html>

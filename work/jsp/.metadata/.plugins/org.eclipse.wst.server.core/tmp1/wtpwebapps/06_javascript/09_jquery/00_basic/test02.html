@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+		//jquery 에서의 $ 충돌 해결법
+		//jquery 에서 $를 사용할수 있음
+		$.noConflict();
+		console.log($);
+		//noConflict 사용시 jquery 로 이용해야한다
+		console.log(jQuery);
+		
+		jQuery(document).ready(function ($){
+			//jQuery
+			console.log($);
+		});
+		
+		(function($) {
+			//jQuery
+			console.log($);
+		})(jQuery);
+		
+		var j = jQuery;
+		
+    </script>
+</head>
+
+<body>
+    <div>
+
+
+    </div>
+</body>
+
+</html>

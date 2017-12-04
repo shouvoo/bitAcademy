@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="../js/jquery-3.2.1.js"></script>
+</head>
+<body>
+	<div id="imglist">
+		<div>
+			<img src="images/pic1.jpg" width="200" height="200" />
+		</div>
+		<div>
+			<img src="images/pic1.jpg" width="200" height="200" />
+		</div>
+		<div>
+			<img src="images/pic1.jpg" width="200" height="200" />
+		</div>
+		<div>
+			<img src="images/pic1.jpg" width="200" height="200" />
+		</div>
+		<div>
+			<img src="images/pic1.jpg" width="200" height="200" />
+		</div>
+	</div>
+    <script>
+		$(window).scroll(function(){
+			console.log($(window).scrollTop(), $(window).height(), $(document).height())
+			
+			var st = $(window).scrollTop();
+			var wh = $(window).height();
+			var dh = $(document).height()
+			
+			if(st + wh >= dh - 10)
+		});
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

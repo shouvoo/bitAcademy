@@ -1,0 +1,9 @@
+package jquery.ajaxfile;
+
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/jquary/ajaxfile/test01")
+public class Test01 
+{
+
+}

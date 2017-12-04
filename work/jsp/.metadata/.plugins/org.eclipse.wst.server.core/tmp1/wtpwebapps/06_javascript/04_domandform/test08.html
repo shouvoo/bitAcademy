@@ -1,0 +1,44 @@
+<!-- 
+	DOM API
+	
+	엘리먼트 삭제하기
+	parent.removeChild(child);
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAdd();">추가</button>
+	<button onclick="doDel();">삭제</button>
+	
+	<div id="list"></div>
+	
+	<script type="text/javascript">
+	
+		var listObj = document.querySelector("#list");
+	
+		function doAdd()
+		{
+			var h1Obj = document.createElement("h1");
+			var txtObj = document.createTextNode("테스트");
+			
+			listObj.appendChild(h1Obj).appendChild(txtObj);
+		}
+		
+		function doDel()
+		{
+			var h1Obj = document.querySelector("h1");
+			//if(h1Obj != undefined) listObj.removeChild(h1Obj);
+			//if(h1Obj != undefined) h1Obj.remove()
+			
+			if(h1Obj != undefined) h1Obj.parentNode.removeChild(h1Obj);
+			
+		}
+	
+	</script>
+	
+</body>
+</html>

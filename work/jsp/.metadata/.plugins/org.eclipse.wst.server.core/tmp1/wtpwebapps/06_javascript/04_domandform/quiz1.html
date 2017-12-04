@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">	
+	var containerDiv;
+	var frm;
+	
+	function doCheck()
+	{
+		
+		
+		if(isEmpty(frm.writer, "이름을 입력하세요")) return false;
+		if(isEmpty(frm.id, "id를 입력하세요")) return false;
+		if(frm.id.value.length < 4 || frm.id.value.length > 8)
+		{
+			alert("ID 는 4자 이상 8자 이하이어야 합니다");
+			frm.id.focus ();
+			frm.id.select ();
+			return false;
+		}
+		
+		if(isEmpty(frm.pass, "패스워드를 입력하세요")) return false;
+		if(isEmpty(frm.pass2, "확인 패스워드를 입력하세요")) return false;
+		
+		if(frm.pass.value != frm.pass2.value)
+		{
+			alert("패스워드가 틀립니다 다시 입력해 주세요");
+			frm.pass2.value = "";
+			frm.pass2.focus ();
+			frm.pass.select();
+			return false;
+		}
+		
+		
+		var checkArr = frm.check;
+		
+		if(checkArr[1].checked == true)
+		{
+			alert("경력체크시 경력을 체크하세요");
+			
+		} else 
+		{
+			frm.sel.selectedIndex = 0;
+		};
+		frm.sel.disabled = !checkArr[1].checked; 
+		
+		return emailcheck();
+		
+		
+	}
+	
+	function emailcheck()
+	{
+		//이메일 정규식
+		var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
+		var bln = false;
+
+		var email = frm.email.value;
+		
+		if(email.length == 0)
+		{
+			if(frm.emailCheck.checked == true)
+			{
+				alert("메일수신 체크시 이메일을 입력하세요!");
+			}
+			frm.email.focus ();
+			frm.email.select();
+			return bln;
+		}
+		//이메일 형식에 맞지않으면
+		if (!email.match(regExp)){
+			frm.email.focus ();
+			frm.email.select();
+			alert('올바른 이메일 주소가 아닙니다.');
+			return bln;
+		}else{
+			alert('완료!!');
+			//document.inputForm.submit();
+			bln = true;
+		}
+		
+		return bln;
+
+	}
+	
+	function init()
+	{
+		containerDiv = document.createElement("div");
+		containerDiv.name = "container";
+		document.body.appendChild(containerDiv);
+		
+		containerDiv.innerHTML += "<form name='frm'></form>";
+		frm = document.frm;
+		
+		frm.innerHTML += "이름<input type='text' name='writer' size='20'>";
+		frm.innerHTML += "<br>아이디<input type='text' name='id' size='20'>";
+		frm.innerHTML += "<br>비밀번호<input type='password' name='pass' size='20'>";
+		frm.innerHTML += "비밀번호확인<input type='password' name='pass2' size='20'>";
+		frm.innerHTML += "<br>경력여부확인<input type='checkbox' name='check'>신입";
+		frm.innerHTML += "<input type='checkbox' name='check' onchange='doCheck();'>경력";
+		frm.innerHTML += "<select name='sel'></select>";
+		frm.innerHTML += "<br>이메일<input type='text' name='email' size='20'>";
+		frm.innerHTML += "<input type='checkbox' name='emailCheck'>메일수신";
+		frm.innerHTML += "<br><button type='button' onclick='doCheck();'>확인</button>";
+		
+		frm.sel.disabled = true;
+		var sel = frm.sel;
+		sel.options[sel.options.length] = new Option("선택하세요", "0");
+		sel.options[sel.options.length] = new Option("3개월", "1");
+		sel.options[sel.options.length] = new Option("6개월", "2");
+		sel.options[sel.options.length] = new Option("1년", "3");
+		sel.options[sel.options.length] = new Option("1년6개월", "4");
+		sel.options[sel.options.length] = new Option("2년", "5");
+		sel.options[sel.options.length] = new Option("5년", "6");
+	}
+	
+	function isEmpty(target, msg)
+	{
+		if(target.value == "")
+		{
+			alert(msg);
+			target.focus();
+			return true;
+		}
+		return false;
+	}
+	
+	window.onload = init;
+	
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

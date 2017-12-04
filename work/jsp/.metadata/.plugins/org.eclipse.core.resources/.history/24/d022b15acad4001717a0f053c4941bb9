@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="db.repository.mapper.MemberMapper">
+
+	<resultMap id="memberMap" type="member">
+		<result column="member_no" property="member_no" />
+		<result column="id" property="id" />
+		<result column="pass" property="pass" />
+		<result column="name" property="name" />
+		<result column="email1" property="email1" />
+		<result column="email2" property="email2" />
+		<result column="email_key" property="emailKey" />
+		<result column="file_no" property="fileNo" />
+		<result column="address" property="address" />
+		<result column="authority" property="authority" />
+	</resultMap>
+
+    <select id="selectMemberById" parameterType="string" resultType="member">
+        select *
+          from member 
+         where id = #{value}
+    </select>
+    
+    <select id="selectMember" resultType="member">
+        select id,
+               name,
+               email,
+               addr
+          from member 
+    </select>
+    
+    <insert id="insertMember" parameterType="member">
+        insert into member (
+            id, 
+            name, 
+            addr, 
+            email
+        ) values (
+            #{id}, 
+            #{name}, 
+            #{addr}, 
+            #{email}
+        )
+    </insert>
+    
+    <update id="updateMember" parameterType="member">
+        update member
+           set addr = #{addr}
+         where id1   = #{id}  
+    </update>
+    
+    <update id="deleteMember" parameterType="string">
+        delete member
+         where id = #{id}  
+    </update>
+</mapper>
+
+
+
+

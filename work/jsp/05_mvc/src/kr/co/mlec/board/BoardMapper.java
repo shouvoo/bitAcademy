@@ -10,7 +10,6 @@ package kr.co.mlec.board;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
-
 import kr.co.mlec.common.MyAppSqlConfig;
 
 public interface BoardMapper

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	div
+	{
+		transition: 0.5S;
+		position: relative;
+		border: 1px solid;
+		background-color: gray;
+		width: 500px;
+		height: 500px;
+		margin-left: 200px;
+	}
+	
+	.hidden { top: -1000px; }
+	.show { top: 0px; }
+
+</style>
+
+</head>
+<body>
+	<p><a href="#" id="link1">슬라이드</a></p>
+	<div id="d1" class="hidden">자바스크립트</div>
+	
+	
+	<script type="text/javascript">
+	
+		var dObj = document.querySelector("p a");
+		dObj.addEventListener("click", move);
+		
+		function move(e)
+		{
+			var dObj = document.querySelector("div");
+			var cls = dObj.getAttribute("class");
+			if   (cls == "hidden") cls = "show"; 
+			else  cls = "hidden";
+			dObj.setAttribute("class", cls);
+		}
+
+	</script>
+</body>
+</html>
