@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title 노드 게시판
+    body
+        h1 노드 게시판
+        table
+            thead
+                tr
+                    td 번호
+                    td 제목
+                    td 작성자
+
+                - for(var i = 0; i < obj.length; i++) {
+                tr
+                    td #{obj[i].no}
+                    td 
+                        a(href="detail.do?no="+obj[i].no) #{obj[i].title}
+                    td #{obj[i].writer}
+                - }
+            tbody :tbody
+        a(href="writeForm.do") 글쓰기

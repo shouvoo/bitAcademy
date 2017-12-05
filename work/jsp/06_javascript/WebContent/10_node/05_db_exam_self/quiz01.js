@@ -23,9 +23,30 @@ var fs = require("fs");
 // 파라미터 처리 모듈
 var qs = require("querystring");
 
+var mysql = require("mysql");
+
+var con = mysql.createConnection({
+	user: "hanbit",
+	password: "hanbit",
+	database: "hanbit"
+});
+
+
+
+function getDB(sql, arr, callback)
+{
+	con.query(sql, arr, function(err, result){
+		if(err) throw err;
+		
+		callback(result);
+	})
+	
+	
+}
+
 var server = http.createServer(function(request, response) {
 	var urlObj = url.parse(request.url, true);  
-
+	console.log(urlObj.pathname)
 	if (urlObj.pathname == "/") {
 		fs.readFile("board/index.html", function (error, data) {
 			response.writeHead(200, 
@@ -55,25 +76,61 @@ var server = http.createServer(function(request, response) {
 		request.on("end", function () {
 			// title=aaa&writer=bbb&content=ccc
 			var param = qs.parse(bodyData);
-			
-			response.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
-			
-			fs.readFile("board/write.html", function (err, data) {
-				data = data.replace(":title", param.title);	
-				data = data.replace(":writer", param.writer);	
-				data = data.replace(":content", param.content);	
-				response.end(data);
-			});
+
+			getDB("insert into tb_board(writer, title , content) values(?, ?, ?)", 
+					[param.writer, param.title, param.content], setWrite);
+			function setWrite(){}
 		});
 	}
 	else if (urlObj.pathname == "/list.do") {
 		fs.readFile("board/list.html", function (error, data) {
-			response.writeHead(200, 
-					{"Content-Type": "text/html; charset=utf-8"});
-			response.write(data);
-			response.end();
+			getDB("select * from tb_board order by no desc", [], setList);
+			var tag = "";
+			response.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
+			function setList(result)
+			{
+				for(var i = 0; i < result.length; i++)
+				{
+					tag += "<tr>\
+								<td>"+ result[i].no +"</td>\
+								<td><a href=/detail.do?id=" + result[i].no +">"+ result[i].title +"</a></td>\
+								<td>"+ result[i].writer +"</td>\
+							</tr>";	
+												
+				}
+				data = data.toString().replace(":insertHere", tag);
+				response.end(data);
+			}
 		});
 	}
+	else if (urlObj.pathname == "/detail.do") {
+		/*getDB("select * from tb_board where no=?", [], detailList);
+
+		function detailList()
+		{
+
+		}*/
+
+		
+		var bodyData = "";
+		request.on("data", function (data) {
+			bodyData += data;
+		});
+		request.on("end", function () {
+			var param = qs.parse(bodyData);
+			console.log(param)
+			/*response.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
+			
+			fs.readFile("", function (err, data) {
+				response.write("<h1>" + param.no + "</h1>")
+				response.write("<h1>" + param.title + "</h1>")
+				response.write("<h1>" + param.writer + "</h1>")
+				response.write("<h1>" + param.content + "</h1>")
+				response.end(data);
+			});*/
+		});
+	}
+
 	else {
 		fs.readFile("board/error404.html", function (error, data) {
 			response.writeHead(200, 
