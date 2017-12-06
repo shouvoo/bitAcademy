@@ -122,7 +122,7 @@ function error404(response) {
 }
 
 function index(response) {
-	fs.readFile("view/index.pug", "utf-8", function(err, data) {
+	fs.readFile("view/index.html", "utf-8", function(err, data) {
 		// 오류에 대한 처리 코드 추가 가능
 		var html = pug.render(data);
 		response.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
